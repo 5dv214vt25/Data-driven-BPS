@@ -1,0 +1,123 @@
+# This file contains the OpenAPI specification for the Analysis endpoints.
+analysis_paths:
+  /analyze/simod-scenario-output:
+    get:
+      tags:
+        - Analysis
+      summary: Analyze a SIMOD scenario output
+      description: Analyzes a SIMOD scenario output and returns the results
+      parameters:
+        - name: user_id
+          in: query
+          description: ID of the user
+          required: true
+          schema:
+            type: string
+        - name: simod_scenario_id
+          in: query
+          description: ID of the SIMOD scenario to analyze
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  simod_scenario_id:
+                    type: string
+                  analysis_result:
+                    type: object
+        '400':
+          description: Missing required parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "user_id and simod_scenario_id are required"
+        '500':
+          description: Error analyzing SIMOD scenario output
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Error analyzing simod scenario output"
+
+  /analyze/agent-scenario-output:
+    get:
+      tags:
+        - Analysis
+      summary: Analyze an agent scenario output
+      description: Analyzes an agent scenario output and returns the results
+      parameters:
+        - name: user_id
+          in: query
+          description: ID of the user
+          required: true
+          schema:
+            type: string
+        - name: agent_scenario_id
+          in: query
+          description: ID of the agent scenario to analyze
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  agent_scenario_id:
+                    type: string
+                  analysis_result:
+                    type: object
+        '400':
+          description: Missing required parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "user_id and agent_scenario_id are required"
+        '500':
+          description: Error analyzing agent scenario output
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Error analyzing simod scenario output"

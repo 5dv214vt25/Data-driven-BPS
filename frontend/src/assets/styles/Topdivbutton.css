@@ -1,0 +1,14 @@
+.topdivbuttonstyle {
+    margin-top: 18px;
+    display: flex;
+    position: relative;
+    width: 150px;
+    height: 37px; 
+}
+
+.topdivbuttonstyledynamicwidth {
+    margin-top: 18px;
+    display: flex;
+    position: relative;
+    height: 37px; 
+}

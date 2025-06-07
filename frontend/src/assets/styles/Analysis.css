@@ -1,0 +1,160 @@
+/* Main analysis container */
+.analysis-container,
+.analysis-container-full {
+  width: min(95%, 1800px);
+  padding: clamp(1rem, 2vw, 1.5rem);
+  background-color: #ffffff;
+  border-radius: 12px;
+  margin: 0.5rem auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Additional styles for full-height content container */
+.analysis-container-full {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Each upload column */
+.upload-section {
+  width: 30%;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header container to keep alignment consistent */
+.upload-header {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Upload body wrapper for alignment */
+.upload-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .scenario-list-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .upload-section {
+    width: 80%;
+  }
+
+  .controls-container {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+}
+
+/* Centered Analyze button */
+.button-row {
+  display: flex;
+  justify-content: right;
+  position: relative;
+  top: 0px;
+  right: 10px;
+}
+
+/* Double-sized Analyze button */
+.analyze-button {
+  font-size: 1.25rem;
+  min-width: 200px;
+}
+
+/* For BPMN viewer or similar content blocks */
+.bpmn-container {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Loading state container */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+}
+
+.analysis-view-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.analysis-card {
+  flex: 1 1 300px;
+  max-width: 450px;
+  border: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.card-header {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.grid-form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+/* Center align text elements in grid */
+.grid-form>*:nth-child(odd) {
+  align-self: center;
+}
+
+.section-header {
+  grid-column: 1 / -1;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/* Responsive grid layout for small screens */
+@media (max-width: 600px) {
+  .grid-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+.analysis-value{
+  border-left: 1px solid black;
+  padding-left: 0.5rem;
+}
+
+.scenario-list-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}

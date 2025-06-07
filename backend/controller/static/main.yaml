@@ -1,0 +1,185 @@
+# This file is the main OpenAPI specification for the Controller API.
+# It defines the API endpoints, tags, and paths for the Controller.
+# This is what allows the Swagger UI to be generated.
+
+openapi: 3.0.0
+info:
+  title: Controller API
+  description: API between the frontend and backend Controller
+  version: 1.0.0
+servers:
+  - url: http://localhost:8888
+    description: Local development server
+
+# Try a more explicit tag grouping structure
+x-tagGroups:
+  - name: API Endpoints
+    tags:
+      - General
+      - Event Log
+      - Simod
+      - Simod Scenarios
+      - Simod Output
+      - Agent
+      - Agent Scenarios
+      - Agent Output
+      - Demo
+      - Analysis
+    collapsed: true
+
+# Define individual tags with collapsed state
+tags:
+  - name: General
+    description: General endpoints
+    x-displayName: General
+    x-traitTag: true
+    x-collapsed: true
+  - name: Event Log
+    description: Event log management endpoints
+    x-displayName: Event Log
+    x-traitTag: true
+    x-collapsed: true
+  - name: Simod
+    description: Simod discovery and simulation endpoints
+    x-displayName: Simod
+    x-traitTag: true
+    x-collapsed: true
+  - name: Simod Scenarios
+    description: Simod scenario management endpoints
+    x-displayName: Simod Scenarios
+    x-traitTag: true
+    x-collapsed: true
+  - name: Simod Output
+    description: Simod simulation output management endpoints
+    x-displayName: Simod Output
+    x-traitTag: true
+    x-collapsed: true
+  - name: Agent
+    description: Agent discovery and simulation endpoints
+    x-displayName: Agent
+    x-traitTag: true
+    x-collapsed: true
+  - name: Agent Scenarios
+    description: Agent scenario management endpoints
+    x-displayName: Agent Scenarios
+    x-traitTag: true
+    x-collapsed: true
+  - name: Agent Output
+    description: Agent simulation output management endpoints
+    x-displayName: Agent Output
+    x-traitTag: true
+    x-collapsed: true
+  - name: Demo
+    description: Demo endpoints for testing
+    x-displayName: Demo
+    x-traitTag: true
+    x-collapsed: true
+  - name: Analysis
+    description: Analysis endpoints
+    x-displayName: Analysis
+    x-traitTag: true
+    x-collapsed: true
+
+# Add document level configuration for ReDoc
+x-docs-shell-configuration:
+  collapseByDefault: true
+
+# Define paths section
+paths:
+  # General paths
+  /api/health-check:
+    $ref: './paths/general.yaml#/general_paths/~1api~1health-check'
+  
+  # Event Log paths
+  /storage/upload-event-log:
+    $ref: './paths/event_log.yaml#/event_log_paths/~1storage~1upload-event-log'
+  /storage/get-event-log:
+    $ref: './paths/event_log.yaml#/event_log_paths/~1storage~1get-event-log'
+  /storage/list-event-logs:
+    $ref: './paths/event_log.yaml#/event_log_paths/~1storage~1list-event-logs'
+  /storage/delete-event-log:
+    $ref: './paths/event_log.yaml#/event_log_paths/~1storage~1delete-event-log'
+  /storage/delete-all-event-logs:
+    $ref: './paths/event_log.yaml#/event_log_paths/~1storage~1delete-all-event-logs'
+  /api/xes-to-csv:
+    $ref: './paths/event_log.yaml#/event_log_paths/~1api~1xes-to-csv'
+  /api/csv-to-xes:
+    $ref: './paths/event_log.yaml#/event_log_paths/~1api~1csv-to-xes'
+  /storage/update-event-log:
+    $ref: './paths/event_log.yaml#/event_log_paths/~1storage~1update-event-log'
+  
+  # Simod paths
+  /api/start-simod-discovery:
+    $ref: './paths/simod.yaml#/simod_paths/~1api~1start-simod-discovery'
+  /api/start-simod-simulation:
+    $ref: './paths/simod.yaml#/simod_paths/~1api~1start-simod-simulation'
+  
+  # Simod Scenarios paths
+  /storage/upload-simod-scenario:
+    $ref: './paths/simod_scenarios.yaml#/simod_scenarios_paths/~1storage~1upload-simod-scenario'
+  /storage/get-simod-scenario:
+    $ref: './paths/simod_scenarios.yaml#/simod_scenarios_paths/~1storage~1get-simod-scenario'
+  /storage/list-simod-scenarios:
+    $ref: './paths/simod_scenarios.yaml#/simod_scenarios_paths/~1storage~1list-simod-scenarios'
+  /storage/update-simod-scenario:
+    $ref: './paths/simod_scenarios.yaml#/simod_scenarios_paths/~1storage~1update-simod-scenario'
+  /storage/delete-simod-scenario:
+    $ref: './paths/simod_scenarios.yaml#/simod_scenarios_paths/~1storage~1delete-simod-scenario'
+  
+  # Simod Output paths
+  /storage/upload-simod-output:
+    $ref: './paths/simod_output.yaml#/simod_output_paths/~1storage~1upload-simod-output'
+  /storage/list-simod-outputs:
+    $ref: './paths/simod_output.yaml#/simod_output_paths/~1storage~1list-simod-outputs'
+  /storage/get-simod-output:
+    $ref: './paths/simod_output.yaml#/simod_output_paths/~1storage~1get-simod-output'
+  /storage/delete-simod-output:
+    $ref: './paths/simod_output.yaml#/simod_output_paths/~1storage~1delete-simod-output'
+  /storage/update-simod-output:
+    $ref: './paths/simod_output.yaml#/simod_output_paths/~1storage~1update-simod-output'
+    
+  # Agent paths
+  /api/start-agent-discovery:
+    $ref: './paths/agent.yaml#/agent_paths/~1api~1start-agent-discovery'
+  /api/start-agent-simulation:
+    $ref: './paths/agent.yaml#/agent_paths/~1api~1start-agent-simulation'
+  /api/update-agent-parameters:
+    $ref: './paths/agent.yaml#/agent_paths/~1api~1update-agent-parameters'
+    
+  # Agent Scenarios paths
+  /storage/upload-agent-scenario:
+    $ref: './paths/agent_scenarios.yaml#/agent_scenarios_paths/~1storage~1upload-agent-scenario'
+  /storage/list-agent-scenarios:
+    $ref: './paths/agent_scenarios.yaml#/agent_scenarios_paths/~1storage~1list-agent-scenarios'
+  /storage/get-agent-scenario:
+    $ref: './paths/agent_scenarios.yaml#/agent_scenarios_paths/~1storage~1get-agent-scenario'
+  /storage/delete-agent-scenario:
+    $ref: './paths/agent_scenarios.yaml#/agent_scenarios_paths/~1storage~1delete-agent-scenario'
+  /storage/update-agent-scenario:
+    $ref: './paths/agent_scenarios.yaml#/agent_scenarios_paths/~1storage~1update-agent-scenario'
+
+  # Agent Output paths
+  /storage/upload-agent-output:
+    $ref: './paths/agent_output.yaml#/agent_output_paths/~1storage~1upload-agent-output'
+  /storage/list-agent-outputs:
+    $ref: './paths/agent_output.yaml#/agent_output_paths/~1storage~1list-agent-outputs'
+  /storage/get-agent-output:
+    $ref: './paths/agent_output.yaml#/agent_output_paths/~1storage~1get-agent-output'
+  /storage/delete-agent-output:
+    $ref: './paths/agent_output.yaml#/agent_output_paths/~1storage~1delete-agent-output'
+  /storage/update-agent-output:
+    $ref: './paths/agent_output.yaml#/agent_output_paths/~1storage~1update-agent-output'
+    
+  # Demo paths
+  /api/get-test-message-from-controller:
+    $ref: './paths/demo.yaml#/demo_paths/~1api~1get-test-message-from-controller'
+  /api/simod-demo-request:
+    $ref: './paths/demo.yaml#/demo_paths/~1api~1simod-demo-request'
+  /api/agent-simulator-demo-request:
+    $ref: './paths/demo.yaml#/demo_paths/~1api~1agent-simulator-demo-request'
+      
+  # Analysis paths
+  /analyze/simod-scenario-output:
+    $ref: './paths/analysis.yaml#/analysis_paths/~1analyze~1simod-scenario-output'
+  /analyze/agent-scenario-output:
+    $ref: './paths/analysis.yaml#/analysis_paths/~1analyze~1agent-scenario-output'

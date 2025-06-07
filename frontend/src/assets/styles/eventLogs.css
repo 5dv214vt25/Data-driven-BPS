@@ -1,0 +1,77 @@
+.container-wrapper {
+  width: auto;
+  margin: 0.5rem clamp(1rem, 1.5vw, 2rem);
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+
+  box-sizing: border-box;
+
+  height: calc(100vh - 64px - (2 * 0.5rem));
+}
+
+.container-panel {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem clamp(1rem, 1.5vw, 2rem) clamp(1rem, 1.5vw, 2rem) clamp(1rem, 1.5vw, 2rem);
+  gap: 1rem;
+  overflow-y: auto;
+}
+
+.container-panel h2,
+.container-panel h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.left-container {
+  flex: 1 1 30%;
+  min-width: 280px;
+}
+
+
+.right-container {
+  flex: 1 1 70%;
+  min-width: 400px;
+}
+
+@media screen and (max-width: 768px) {
+  .container-wrapper {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .container-panel {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+
+.position_discovery_button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 2;
+}
+
+.eventlog-button-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.upload-btn {
+  height: 1.75rem;
+  max-height: 1.75rem;
+}
+
+.list-btn {
+  height: 1.75rem;
+  max-height: 1.75rem;
+}

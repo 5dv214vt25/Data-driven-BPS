@@ -1,0 +1,35 @@
+.gateway-editor {
+  padding: 0.5rem;
+}
+
+.gateway-editor>label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.gateway-branches {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.branch-row {
+  display: grid;
+  grid-template-columns: 1fr 150px auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.25rem 0;
+}
+
+.branch-row label {
+  font-weight: normal;
+}
+
+.branch-row ui5-input {
+  width: 100%;
+}
+
+.branch-row ui5-button {
+  white-space: nowrap;
+}

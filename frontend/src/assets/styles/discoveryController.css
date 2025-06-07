@@ -1,0 +1,14 @@
+.controls-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.buttonStyle {
+  position: relative;
+  top: 8px;
+  display: flex;
+  width: 150px;
+  height: 37px;
+}

@@ -1,0 +1,29 @@
+{
+  "params": {
+        "activity_durations": {
+            "AML check": 60.0,
+            "Assess loan risk": 10.0
+        },
+    "agent_activity_durations": [
+      {
+        "agent_id": 17,
+        "overrides": {
+          "AML check": 45.0,
+          "Approve loan offer": 80.0
+        }
+      },
+      {
+        "agent_id": 23,
+        "overrides": {
+          "Assess loan risk": 150.0
+        }
+      }
+    ],
+    "res_calendars": {
+            "Agent_id": 7.0,
+            "Days": ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"],
+            "Schedule": [["09:00:00", "17:00:00"]]
+        },
+        "num_simulations": 3
+    }
+}

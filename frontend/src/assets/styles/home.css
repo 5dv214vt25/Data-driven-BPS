@@ -1,0 +1,95 @@
+.home {
+  margin: 2rem auto;
+}
+
+.item {
+  height: 140px;
+  margin: 10px auto;
+  display: block;
+  width: 500px;
+  cursor: pointer;
+  background-color: #ffffff;
+  box-shadow: 3px 3px 3px rgb(113, 113, 113);
+
+  transition: all 0.5s;
+  border: 1px solid silver;
+
+  padding: 10px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+
+.itemText{
+  font-size: 1em;
+}
+
+.item:hover {
+  padding-left: 25px;
+}
+
+.info {
+  position: relative;
+  top: 0px;
+  display: block;
+
+  font-size: 1em;
+  width: fit-content;
+  margin: 0px auto;
+  margin-top: 15px;
+}
+
+
+.itemHeadline {
+  color: #333;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  font-size: 1.4em;
+  gap: 6;
+}
+
+.itemIcon {
+  float: left;
+  position: relative;
+  top: 5px;
+  width: 25px;
+  height: 25px;
+  margin-right: 8px;
+  margin-bottom: 12px;
+}
+
+.itemButton {
+  padding-top: 1px;
+}
+
+.homeHeadline {
+  color: #333;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+
+.infoIcon {
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.container {
+  display: flex;
+  justify-content: center; 
+  background-color: #f4f4f4;
+  height: 70vh;
+}
+
+.columns {
+  display: flex;
+  gap: 10px;
+}
+
+.column {
+  padding: 10px;
+}

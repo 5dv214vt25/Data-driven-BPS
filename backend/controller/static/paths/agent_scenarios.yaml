@@ -1,0 +1,365 @@
+# This file contains the OpenAPI specification for the Agent Scenarios endpoints.
+agent_scenarios_paths:
+  /storage/upload-agent-scenario:
+    post:
+      tags:
+        - Agent Scenarios
+      summary: Upload Agent scenario
+      description: Upload an AgentSimulator scenario to the database
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - event_log_id
+                - name
+                - model_pkl
+                - param_json
+                - visualization_json
+              properties:
+                event_log_id:
+                  type: integer
+                  description: ID of the event log
+                name:
+                  type: string
+                  description: Name of the agent scenario
+                model_pkl:
+                  type: string
+                  format: binary
+                  description: A .pkl file containing the agent model
+                param_json:
+                  type: string
+                  format: binary
+                  description: A .json file containing the scenario parameters
+                visualization_json:
+                  type: string
+                  format: binary
+                  description: A .json file containing visualization data
+      responses:
+        '201':
+          description: Resource created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  message:
+                    type: string
+                    example: "Scenario uploaded successfully."
+                  scenario_id:
+                    type: integer
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "event_log_id is required and must be a valid integer"
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "an error occured uploading the scenario: {error}"
+                    
+  /storage/list-agent-scenarios:
+    get:
+      tags:
+        - Agent Scenarios
+      summary: List Agent scenarios
+      description: List all AgentSimulator scenarios for a given user ID, optionally filtered by event log ID
+      parameters:
+        - name: user_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the user
+        - name: event_log_id
+          in: query
+          required: false
+          schema:
+            type: integer
+          description: Optional ID of the event log to filter by
+      responses:
+        '200':
+          description: Successful operation - returns list of scenarios
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    event_log_id:
+                      type: integer
+                    name:
+                      type: string
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "user_id is required"
+        '404':
+          description: No scenarios found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "no scenarios found"
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "{error}"
+
+  /storage/get-agent-scenario:
+    get:
+      tags:
+        - Agent Scenarios
+      summary: Get Agent scenario
+      description: Retrieve an AgentSimulator scenario by its ID and return it as a ZIP download
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: ID of the agent scenario
+      responses:
+        '200':
+          description: Successful operation - returns a ZIP archive containing the scenario files
+          content:
+            application/zip:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "id is required and must be a valid integer"
+        '404':
+          description: Scenario not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "no scenario found for agent_scenario_id {agent_scenario_id}"
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "invalid scenario data format"
+                    
+  /storage/update-agent-scenario:
+    put:
+      tags:
+        - Agent Scenarios
+      summary: Update Agent scenario
+      description: Update an AgentSimulator scenario by its ID, and optionally its param_json file and/or name
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - id
+              properties:
+                id:
+                  type: integer
+                  description: The ID of the scenario to update
+                name:
+                  type: string
+                  description: A new name for the scenario
+                param_json:
+                  type: string
+                  format: binary
+                  description: A .json file with new parameters
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  message:
+                    type: string
+                    example: "Scenario updated successfully."
+                  scenario_id:
+                    type: integer
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "id is required and must be a valid integer"
+        '404':
+          description: Scenario not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Scenario not found"
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "an error occured updating the scenario: {error}"
+                    
+  /storage/delete-agent-scenario:
+    delete:
+      tags:
+        - Agent Scenarios
+      summary: Delete Agent scenario
+      description: Delete an AgentSimulator scenario by its ID
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: ID of the agent scenario to delete
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  message:
+                    type: string
+                    example: "Agent scenario deleted successfully."
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "id is required and must be an integer"
+        '404':
+          description: Scenario not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Scenario not found"
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string 
+                    example: "Scenario deletion failed"

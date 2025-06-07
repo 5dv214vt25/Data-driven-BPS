@@ -1,0 +1,156 @@
+.pageContainer {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background: linear-gradient(0deg, rgb(32, 92, 176) 0%, rgb(55, 177, 204) 100%);
+  align-items: center;
+  justify-content: center;
+}
+
+.loginBox {
+  width: 560px;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 5px 50px black;
+}
+
+.logoSection {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.loginContainer {
+  position: relative;
+  margin-top: 50px;
+  position: block;
+  height: 180px;
+}
+
+.loginContainer-headline{
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 50px;
+}
+
+.loginContainer-subHeadline{
+  color: silver;
+  position: relative;
+  top: -10px;
+  text-align: center;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  font-size: 12px;
+}
+
+.username {
+  display: block;
+  height: 40px;
+  width: 400px;
+  box-shadow: none;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  margin: 0px auto;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.titleContainer {
+  margin-top: 20px;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+
+.sendBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-top: 0px;
+}
+
+.forgotPassword {
+  color: rgb(55, 177, 204);
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: 0.3s;
+}
+
+.forgotPassword:hover {
+  color: rgb(75, 114, 180);
+}
+
+/* ----------------------------------------  */
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.signInButton {
+  margin-right: 5px;
+  display: inline-block;
+  background: rgb(32, 92, 176);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 200px;
+  text-align: center;
+}
+
+.signInButton:hover {
+  background: rgb(16, 65, 133);
+  transform: translateY(-1px);
+}
+
+
+.button-register,
+.button-login {
+  width: 140px;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.button-login {
+  margin-right: 15px;
+}
+
+.logoIcon {
+  height: 40px;
+  display: inline-block;
+  position: relative;
+  top: 12px;
+  padding-right: 10px;
+  margin-bottom: 15px;
+}
+
+.headline {
+  display: inline-block;
+  font-size: 1.8rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0px;
+}
+
+.subHeadline {
+  font-size: 1.1rem;
+  color: rgb(152, 152, 152);
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  top: 5px;
+}
+
+

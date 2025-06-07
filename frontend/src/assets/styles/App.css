@@ -1,0 +1,53 @@
+/* Global CSS file (styles here will be applied across website*/
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  margin: 0px;
+  padding: 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #2c3e50;
+}
+
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.componentContainer {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.centerText {
+  text-align: center;
+}
+
+
+.debug-hide-visually {
+  visibility: hidden;
+}
+
+.debug-hide-fully {
+  display: none;
+}
+
+
+.listRow {
+  font-weight: normal;
+  transition: all 0.3s;
+}
+
+.listRow:hover {
+  background-color: rgb(231, 229, 229);
+  cursor: pointer;
+}

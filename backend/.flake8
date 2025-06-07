@@ -1,0 +1,30 @@
+# .flake8
+[flake8]
+max-line-length = 120
+extend-ignore = E203,W503,E501,W605
+select = C,E,F,W,N
+extend-exclude = # Excluded paths
+    simod/simod_src
+    agent_simulator/src/source/agent_types, 
+    agent_simulator/src/source/agents,
+    agent_simulator/src/source/extraneous_delays,
+    agent_simulator/src/simulated_data
+    agent_simulator/src/analysis_notebooks
+    agent_simulator/src/source/interaction_probabilities.py
+    agent_simulator/src/source/train_test_split.py
+
+### SHOULD BE IGNORED USING BLACK
+# E501 (line too long)
+# E203 – (Whitespace before ':') SHOULD BE IGNORED USING BLACK
+# W503 – (Line break before binary operator) 
+
+### SHOULD NOT BE IGNORED
+# E711 – (Comparison to None should be is None) 
+# E712 – Comparison to True/False should be if cond:
+#    example: if x == True: ❌ -> if x: ✅
+# E721 – Use isinstance() instead of type comparisons
+# W605 – Invalid escape sequence
+
+## Usually dont ignore
+# F401 (imported but unused)
+# F841 (assigned but unused)

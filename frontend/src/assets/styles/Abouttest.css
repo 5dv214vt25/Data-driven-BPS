@@ -1,0 +1,569 @@
+/*
+  Abouttest.css
+  ===============
+  This file contains all custom styles for the About Page (src/pages/About.tsx) 
+  of the PVT Business Process Simulation Application.
+  It includes general page layout, header, content sections, user manual carousel, 
+  team display (quadrants and modal), and responsive adjustments.
+*/
+
+/* General Page Styles */
+.aboutComponent {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  padding: 3rem 1rem;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+
+/* Header Section */
+.header {
+  text-align: center;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 2.2em;
+  color: #333;
+  margin-bottom: 0;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.subtitle {
+  font-size: 1.1em;
+  color: #757575;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* General Content Section Styling */
+.content-section {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.content-section:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
+}
+
+.content-section h2 {
+  font-size: 2em;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.content-section p {
+  font-size: 1em;
+  color: #4a4a4a;
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+  overflow-wrap: break-word;
+}
+
+.content-section p:last-child {
+  margin-bottom: 0;
+}
+
+.content-section strong {
+  color: #0056b3;
+  font-weight: 600;
+}
+
+.two-column-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.two-column-layout > div {
+  flex: 1;
+  min-width: 280px;
+  box-sizing: border-box;
+}
+
+.content-section ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  padding-left: 0;
+  margin-bottom: 1.25rem;
+}
+
+.content-section ul li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+  color: #4a4a4a;
+}
+
+/* Interactive Element Styling */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eaeaea;
+  width: 100%;
+}
+
+.section-icon ui5-icon {
+  color: #333;
+  width: 1.5em;
+  height: 1.5em;
+  margin-top: 0.7rem;
+}
+
+.centerText {
+  text-align: center;
+}
+
+/* --- User Manual Carousel Styles --- */
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.inspired-carousel-container {
+  padding: 0;
+  position: relative;
+}
+
+.inspired-carousel-inner-wrapper {
+  display: flex;
+  min-height: 700px;
+}
+
+.side-menu-header {
+  padding: 1rem 0 1rem 0;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 0.5rem;
+}
+
+.side-menu-header h4 {
+  margin: 0;
+  font-size: 0.85em;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+  padding-left: 1.5rem;
+}
+
+.stages-side-menu {
+  background-color: #fff;
+  width: 300px;
+  flex-shrink: 0;
+  border-right: 1px solid #ebebeb;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.stages-side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.stages-side-menu .menu-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+  border-right: 4px solid transparent;
+  margin-right: -1px;
+  flex-grow: 1;
+}
+
+.stages-side-menu .menu-item:hover {
+  opacity: 1;
+  background-color: #f9f9f9;
+}
+
+.stages-side-menu .menu-item.active {
+  opacity: 1;
+  font-weight: 600;
+  color: #333;
+  border-right-color: #333;
+}
+
+.menu-item-title {
+  font-size: 1.1em;
+}
+
+.stage-content-display-area {
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 0;
+}
+
+.content-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.content-slide.active {
+  display: flex;
+  opacity: 1;
+  animation: slideInFromTop 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+  z-index: 1;
+}
+
+.slide-internal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+}
+
+.slide-internal-header h2.centerText { /* Combined with .content-section h2 */
+  font-size: 2em;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+  text-align: center;
+}
+
+.content-actual {
+  width: 100%;
+  max-width: 75ch;
+  text-align: left;
+  overflow-y: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-height: 50px;
+  padding-right: 1rem;
+}
+
+.content-actual p,
+.content-actual ul {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+/* --- Team Display Styles --- */
+.team-intro-paragraph {
+  font-size: 1.05em;
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.team-quadrant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.team-quadrant-item {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.team-quadrant-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.team-quadrant-item h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.team-quadrant-item p {
+  font-size: 0.95em;
+  color: #4a4a4a;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.team-quadrant-item h4,
+.team-quadrant-item .team-member-container {
+  display: none; 
+}
+
+/* Team Member Pill Styles (used in Modal) */
+.team-member-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 0.75rem; 
+  margin-bottom: 0;
+  justify-content: flex-start; 
+}
+
+.team-member-pill {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 0.35em 0.8em;
+  border-radius: 16px;
+  font-size: 0.9em;
+  white-space: nowrap;
+  transition: box-shadow 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.team-member-pill:hover {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* --- Modal Styles --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  width: 550px;
+  max-height: 85vh;
+  overflow-y: auto;
+  transform: scale(0.9);
+  animation: scaleUp 0.3s forwards;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-description {
+  font-size: 1em;
+  color: #333;
+  line-height: 1.65;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+}
+
+.modal-members-area {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.5rem;
+}
+
+.modal-members-heading {
+  font-size: 1.2em;
+  color: #333;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  font-weight: 600;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+}
+
+.modal-close-button ui5-icon {
+  color: #555;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.modal-close-button:hover ui5-icon {
+  color: #000;
+}
+
+.modal-team-title {
+  font-size: 1.5em;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  to {
+    transform: scale(1);
+  }
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .inspired-carousel-inner-wrapper {
+    min-height: auto; /* Allow height to be dynamic based on content */
+    flex-direction: column; /* Stack side menu and content vertically */
+  }
+
+  .stages-side-menu {
+    width: 100%; /* Menu takes full width */
+    border-right: none;
+    border-bottom: 1px solid #ebebeb; /* Border below menu */
+    padding: 0.5rem 0;
+    align-items: flex-start; /* Align items to start rather than center */
+  }
+
+  .stages-side-menu ul {
+    flex-direction: row; /* Arrange menu items horizontally */
+    overflow-x: auto; /* Allow horizontal scrolling for menu items */
+    padding: 0.5rem 0.5rem; /* Padding for scrolling container */
+    margin: 0;
+    justify-content: flex-start;
+    height: auto; /* Adjust height for horizontal layout */
+  }
+
+  .stages-side-menu .menu-item {
+    flex-shrink: 0; /* Prevent items from shrinking in scroll container */
+    padding: 0.75rem 1rem;
+    border-right: none;
+    border-bottom: 3px solid transparent; /* Bottom border for active state */
+    margin-right: 0.5rem; /* Space between items */
+    flex-grow: 0; /* Don't grow horizontally in this layout */
+  }
+
+  .stages-side-menu .menu-item.active {
+    border-right-color: transparent;
+    border-bottom-color: #333;
+  }
+
+  .stage-content-display-area {
+    padding: 1.5rem; /* Padding for content area on mobile */
+    min-height: 300px; /* Ensure some minimum height */
+  }
+
+  .content-slide {
+    position: relative; /* Slides flow naturally, not absolutely positioned */
+    /* height: auto; Let content dictate height if not using fixed min-height for display area */
+    padding: 1rem; /* Adjust slide padding for mobile */
+  }
+
+  .slide-internal-header h2 {
+    font-size: 1.6em; /* Smaller title for slides on mobile */
+  }
+
+  .content-actual {
+    overflow-y: visible; /* Typically no internal scroll if slides are stacked */
+    padding-right: 0; /* No need for scrollbar padding */
+    max-width: 100%; /* Allow content to use full width */
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2.2em; /* Further reduce main title size */
+  }
+
+  .subtitle {
+    font-size: 1em;
+  }
+
+  .content-section h2,
+  .slide-internal-header h2 {
+    font-size: 1.5em; /* Further reduce section/slide titles */
+  }
+
+  .content-section p {
+    font-size: 0.9em;
+  }
+
+  .side-menu-header h4 {
+    padding-left: 1rem; /* Adjust for smaller screens */
+  }
+
+  .stages-side-menu .menu-item {
+    padding: 0.75rem 0.75rem; /* Slightly less padding for smaller menu items */
+  }
+
+  .stage-content-display-area {
+    padding: 1rem; /* Less padding for content area */
+  }
+} 

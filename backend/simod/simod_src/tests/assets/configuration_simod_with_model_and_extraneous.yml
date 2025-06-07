@@ -1,0 +1,42 @@
+version: 5
+common:
+  train_log_path: LoanApp_simplified.csv.gz
+  process_model_path: LoanApp_simplified.bpmn
+  discover_data_attributes: true
+  num_final_evaluations: 1
+  evaluation_metrics:
+    - absolute_hourly_emd
+  log_ids:
+    case: case:concept:name
+    activity: concept:name
+    resource: org:resource
+    start_time: start_timestamp
+    end_time: time:timestamp
+    enabled_time: enabled_time
+preprocessing:
+  multitasking: false
+control_flow:
+  optimization_metric: n_gram_distance
+  num_iterations: 3
+  num_evaluations_per_iteration: 3
+  gateway_probabilities:
+    - discovery
+    - equiprobable
+resource_model:
+  optimization_metric: absolute_hourly_emd
+  num_iterations: 3
+  num_evaluations_per_iteration: 3
+  resource_profiles:
+    discovery_type: pool
+    granularity: 60
+    confidence:
+      - 0.5
+      - 0.85
+    support:
+      - 0.01
+      - 0.3
+    participation: 0.4
+extraneous_activity_delays:
+  optimization_metric: relative_emd
+  discovery_method: naive
+  num_iterations: 1 # Direct discovery, no optimization

@@ -1,0 +1,4 @@
+.ui5-side-navigation-item[selected]::part(button) {
+  border: none !important;
+  box-shadow: none !important;
+}

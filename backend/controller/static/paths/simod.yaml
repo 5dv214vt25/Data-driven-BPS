@@ -1,0 +1,160 @@
+# This file contains the OpenAPI specification for the Simod endpoints.
+simod_paths:
+  /api/start-simod-discovery:
+    get:
+      tags:
+        - Simod
+      summary: Start Simod discovery
+      description: Start a Simod discovery for a specific event log
+      parameters:
+        - name: user_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the user
+        - name: event_log_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the event log
+        - name: save_boolean
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: ["true", "false"]
+          description: Boolean to save the discovery scenario in the database
+        - name: name
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Name of the discovery scenario to save in the database
+      responses:
+        '200':
+          description: Successful operation - returns ZIP file with BPMN and parameters
+          headers:
+            X-Scenario-ID:
+              schema:
+                type: string
+              description: ID of the saved discovery scenario
+          content:
+            application/zip:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: Bad request - Invalid input parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Missing user_id or event_log_id parameters"
+        '404':
+          description: Event log not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Event log not found"
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Simod discovery failed with status code {response.status_code}"
+
+  /api/start-simod-simulation:
+    get:
+      tags:
+        - Simod
+      summary: Start Simod simulation
+      description: Start a Simod simulation using an existing discovery scenario
+      parameters:
+        - name: user_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the user
+        - name: scenario_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the discovery scenario
+        - name: save_boolean
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: ["true", "false"]
+          description: Boolean to save the simulation in the database
+      responses:
+        '200':
+          description: Successful operation - returns CSV file with simulated event log
+          content:
+            text/csv:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: Bad request - Invalid input parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Missing user_id or scenario_id parameters"
+        '404':
+          description: Scenario not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Scenario not found"
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Error connecting to Simod API or simulation failed"

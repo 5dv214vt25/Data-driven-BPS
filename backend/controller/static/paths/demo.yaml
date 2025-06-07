@@ -1,0 +1,73 @@
+# This file contains the OpenAPI specification for the Demo endpoints.
+demo_paths:
+  /api/get-test-message-from-controller:
+    get:
+      tags:
+        - Demo
+      summary: Get test message from controller
+      description: Demo request to get a test message from the controller
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Hello World From Controller!"
+
+  /api/simod-demo-request:
+    get:
+      tags:
+        - Demo
+      summary: Simod demo request
+      description: Demo request to get a test message from the Simod API
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '500':
+          description: Error from Simod API
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Failed to get message from simod"
+
+  /api/agent-simulator-demo-request:
+    get:
+      tags:
+        - Demo
+      summary: Agent simulator demo request
+      description: Demo request to get a test message from the agent simulator API
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '500':
+          description: Error from Agent Simulator API
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Failed to get message from agent simulator" 

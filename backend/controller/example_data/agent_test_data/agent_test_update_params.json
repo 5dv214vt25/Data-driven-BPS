@@ -1,0 +1,9 @@
+{
+  "params": {
+    "activity_durations": {
+      "AML check": 60.0,
+      "Assess loan risk": 10.0
+    },
+    "num_simulations": 2
+  }
+}

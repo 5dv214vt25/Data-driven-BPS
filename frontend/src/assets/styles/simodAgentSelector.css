@@ -1,0 +1,67 @@
+.simodAgentContainer {
+  display: inline-block;
+  position: relative;
+  top: -2px;
+}
+
+.headlineText {
+  font-family: "72", Arial, Helvetica, sans-serif;
+  font-size: 0.875rem;
+  color: #677788;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0 0 0.25rem 0;
+  text-align: center;
+  position: relative;
+  top: 0px;
+}
+
+
+.selectorContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+  top: 1px;
+}
+
+.segmentButton {
+  display: flex;
+  color: #0d65d4;
+  font-family: "72", Arial, Helvetica, sans-serif;
+  background-color: white;
+  border: 1px solid silver;
+  text-shadow: 0.1px 0 0 currentColor;
+  font-size: 1.0rem;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 7px 25px;
+  border-radius: 0px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  transition: all 0.3s;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sigmodButton {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.agentButton {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.segmentButton:hover {
+  background-color: #eee;
+}
+
+.segmentButton.active {
+  border: 1px solid #2663b7;
+  border-width: 1.3px;
+  background-color: #edf6ff;
+  color: #0d65d4;
+}

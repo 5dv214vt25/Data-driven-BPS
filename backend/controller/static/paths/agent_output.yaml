@@ -1,0 +1,324 @@
+# This file contains the OpenAPI specification for the Agent Output endpoints.
+agent_output_paths:
+  /storage/upload-agent-output:
+    post:
+      tags:
+        - Agent Output
+      summary: Upload Agent simulation output
+      description: Upload a new AgentSimulator simulation output CSV for a given scenario
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - agent_scenario_id
+                - file
+              properties:
+                agent_scenario_id:
+                  type: integer
+                  description: ID of the agent scenario
+                file:
+                  type: string
+                  format: binary
+                  description: CSV file containing the simulation output
+      responses:
+        '201':
+          description: Resource created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  message:
+                    type: string
+                    example: "Agent output uploaded successfully."
+                  agent_scenario_id:
+                    type: integer
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "agent_scenario_id is required and must be a valid integer"
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Failed to create agent output for agent_scenario_id"
+
+  /storage/list-agent-outputs:
+    get:
+      tags:
+        - Agent Output
+      summary: List Agent simulation outputs
+      description: List all AgentSimulator outputs for a given user ID, optionally filtered by scenario ID
+      parameters:
+        - name: user_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the user
+        - name: agent_scenario_id
+          in: query
+          required: false
+          schema:
+            type: integer
+          description: Optional ID of the agent scenario to filter by
+      responses:
+        '200':
+          description: Successful operation - returns list of outputs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    event_log_id:
+                      type: integer
+                    agent_scenario_id:
+                      type: integer
+                    filename:
+                      type: string
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "No outputs found for user_id: {user_id} and scenario_id: {scenario_id}"
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Database error when retrieving all agent outputs information"
+
+  /storage/get-agent-output:
+    get:
+      tags:
+        - Agent Output
+      summary: Get Agent simulation output
+      description: Download a single AgentSimulator simulation output as a ZIP file by scenario ID
+      parameters:
+        - name: agent_scenario_id
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: ID of the agent scenario
+      responses:
+        '200':
+          description: Successful operation - returns ZIP file containing the CSV
+          content:
+            application/zip:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "agent_scenario_id is required and must be a valid integer"
+        '404':
+          description: Output not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "No output found for agent_scenario_id {agent_scenario_id}"
+
+  /storage/delete-agent-output:
+    delete:
+      tags:
+        - Agent Output
+      summary: Delete Agent simulation output
+      description: Delete an AgentSimulation simulation output by its scenario ID
+      parameters:
+        - name: agent_scenario_id
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: ID of the agent scenario
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  message:
+                    type: string
+                    example: "Agent output deleted successfully."
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "agent_scenario_id is required and must be a valid integer"
+        '404':
+          description: Output not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "No agent output found for agent_scenario_id {agent_scenario_id}"
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Error deleting agent output: {error}"
+
+  /storage/update-agent-output:
+    put:
+      tags:
+        - Agent Output
+      summary: Update Agent simulation output
+      description: Replace the CSV for an existing AgentSimulator simulation output
+      parameters:
+        - name: agent_scenario_id
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: ID of the agent scenario to update
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: New CSV file containing the updated output
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  message:
+                    type: string
+                    example: "Agent output updated successfully."
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "No file uploaded"
+        '404':
+          description: Output not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "No output found to update for agent_scenario_id {agent_scenario_id}"
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Error updating agent output: {error}"

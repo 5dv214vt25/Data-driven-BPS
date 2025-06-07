@@ -1,0 +1,45 @@
+/* FileUpload.css */
+
+.file-upload-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.drop-zone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px dashed gray;
+  padding: 4rem;
+  text-align: center;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.drop-zone.drag-over {
+  background-color: #eee;
+}
+
+.upload-text {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.upload-subtext {
+  font-size: 14px;
+  color: gray;
+}
+
+.selected-file {
+  font-size: 14px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2px;
+  margin-top: 0.1rem;
+}

@@ -1,0 +1,11 @@
+
+
+/* https://experience.sap.com/fiori-design-web/downloads/#sap-icon-font */
+/* https://experience.sap.com/fiori-design-web/downloads/#sap-icon-font */
+@font-face {
+  font-family: 'YourFont';
+  src: url('../fonts/SAP-icons.woff') format('woff');
+  font-weight: bolder;
+  font-style: normal;
+  font-display: swap; 
+}

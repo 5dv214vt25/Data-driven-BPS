@@ -1,0 +1,58 @@
+{
+    "event_log1": {
+        "cost": 25,
+        "cycle_time_average": 25,
+        "cycle_time_per_activity": [
+            {
+                "activity_name": "Appraise property",
+                "cycle_time": 12
+            },
+            {
+                "activity_name": "AML check",
+                "cycle_time": 13
+            }
+        ],
+        "resource_utilization": 0.74,
+        "waiting_time": 4728,
+        "per_case_waiting_time": [
+            {
+                "case_id": 1,
+                "time": 591
+            },
+            {
+                "case_id": 2,
+                "time": 583
+            }
+        ]
+    },
+    "event_log2": {
+        "cost": 30,
+        "cycle_time_average": 32,
+        "cycle_time_per_activity": [
+            {
+                "activity_name": "Appraise property",
+                "cycle_time": 12
+            },
+            {
+                "activity_name": "AML check",
+                "cycle_time": 13
+            }
+        ],
+        "resource_utilization": 0.81,
+        "waiting_time": 5105,
+        "per_case_waiting_time": [
+            {
+                "case_id": 3,
+                "time": 610
+            },
+            {
+                "case_id": 4,
+                "time": 595
+            },
+            {
+                "case_id": 5,
+                "time": 632
+            }
+        ]
+    }
+}

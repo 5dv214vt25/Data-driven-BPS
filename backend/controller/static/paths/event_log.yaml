@@ -1,0 +1,422 @@
+# This file contains the OpenAPI specification for the Event Log endpoints.
+event_log_paths:
+  /storage/upload-event-log:
+    post:
+      tags:
+        - Event Log
+      summary: Upload event log
+      description: Upload an event log file
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - user_id
+                - file
+              properties:
+                user_id:
+                  type: string
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  message:
+                    type: string
+                    example: "Event log uploaded successfully."
+                  event_log_id:
+                    type: string
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "user_id is required"
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "an error occured storing the event log: {error}"
+
+  /storage/get-event-log:
+    get:
+      tags:
+        - Event Log
+      summary: Get event log
+      description: Get an event log file by ID
+      parameters:
+        - name: user_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the user
+        - name: event_log_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the event log
+      responses:
+        '200':
+          description: Successful operation - returns CSV file
+          content:
+            text/csv:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "user_id and event_log_id are required"
+        '404':
+          description: Event log not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "event log with {event_log_id} not found in the database. Returned None"
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Invalid event log data format"
+                    
+  /storage/update-event-log:
+    put:
+      tags:
+        - Event Log
+      summary: Update event log
+      description: Update an event log file by ID
+      parameters:
+        - name: user_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the user
+        - name: event_log_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the event log
+        - name: filename
+          in: query
+          required: true
+          schema:
+            type: string
+          description: New name of the event log
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  message:
+                    type: string
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "user_id, event_log_id, and filename are required"
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Failed to update event log"
+
+  /storage/list-event-logs:
+    get:
+      tags:
+        - Event Log
+      summary: List all event logs
+      description: Get information about all event logs for a specific user
+      parameters:
+        - name: user_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the user
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    event_log_id:
+                      type: string
+                    filename:
+                      type: string
+                    upload_time:
+                      type: string
+                      format: date-time
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "No user id: {user_id} found in the database"
+   
+  /storage/delete-event-log:
+    delete:
+      tags:
+        - Event Log
+      summary: Delete event log
+      description: Delete an event log file by ID
+      parameters:
+        - name: user_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the user
+        - name: event_log_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the event log
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  message:
+                    type: string
+                    example: "Event log deleted successfully."
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "user_id and event_log_id are required"
+
+  /storage/delete-all-event-logs:
+    delete:
+      tags:
+        - Event Log
+      summary: Delete all event logs
+      description: Delete all event logs for a specific user
+      parameters:
+        - name: user_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the user
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  message:
+                    type: string
+                    example: "All event logs deleted successfully."
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "user_id is required"
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Failed to delete all event logs"
+
+  /api/xes-to-csv:
+    post:
+      tags:
+          - Event Log
+      summary: Returns a csv version of a file
+      description: Returns a csv version of a file
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Successful operation - returns CSV file
+          content:
+            text/csv:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "No file uploaded"
+  
+  /api/csv-to-xes:
+    post:
+      tags:
+          - Event Log
+      summary: Returns a xes version of a file
+      description: Returns a xes version of a file
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Successful operation - returns XES file
+          content:
+            text/csv:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "No file uploaded"

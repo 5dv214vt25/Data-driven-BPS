@@ -1,0 +1,31 @@
+
+
+.settings{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.logo{
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+
+    color: white;
+    background: rgb(0,71,171);
+    background: linear-gradient(0deg, rgb(32, 92, 176) 0%, rgb(55, 177, 204) 100%);
+
+    font-size: 25px;
+    margin: 100px;
+    height: 50px;
+    line-height: 50px;
+
+    padding-left: 50px;
+    width: 100px;
+}
+
+.logo2{
+    height: 50px;
+}

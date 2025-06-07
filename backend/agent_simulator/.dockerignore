@@ -1,0 +1,4 @@
+**/analysis_notebooks/
+**/*.png
+src/Dockerfile
+**/tests/

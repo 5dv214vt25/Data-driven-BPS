@@ -1,0 +1,287 @@
+# This file contains the OpenAPI specification for the Agent endpoints.
+agent_paths:
+  /api/start-agent-discovery:
+    post:
+      tags:
+        - Agent
+      summary: Start Agent discovery
+      description: Start an Agent discovery given an event log ID
+      parameters:
+        - name: user_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the user
+        - name: event_log_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the event log
+        - name: save_boolean
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: ['true', 'false']
+          description: Boolean to save the discovery scenario in the database
+        - name: name
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Name of the discovery scenario to save in the database
+      requestBody:
+        required: false
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                parameters:
+                  type: string
+                  format: binary
+                  description: JSON file containing the discovery input parameters
+      responses:
+        '200':
+          description: Successful operation - returns ZIP file containing the discovered process model
+          content:
+            application/zip:
+              schema:
+                type: string
+                format: binary
+          headers:
+            X-Scenario-ID:
+              schema:
+                type: string
+              description: ID of the saved discovery scenario (if save_boolean=true)
+            Access-Control-Expose-Headers:
+              schema:
+                type: string
+              description: Headers that are exposed to the client
+              example: "X-Scenario-ID"
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Missing user_id or event_log_id parameters"
+        '404':
+          description: Event log not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Event log not found"
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Agent discovery failed with status code {response.status_code}"
+
+  /api/start-agent-simulation:
+    get:
+      tags:
+        - Agent
+      summary: Start Agent simulation
+      description: Start an Agent simulation given a user id and a scenario id
+      parameters:
+        - name: user_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the user
+        - name: scenario_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the discovery scenario
+        - name: save_boolean
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: ['true', 'false']
+          description: Boolean to save the simulation in the database
+      responses:
+        '200':
+          description: Successful operation - returns ZIP file containing the simulated event log
+          content:
+            application/zip:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Missing user_id or scenario_id parameters"
+        '404':
+          description: Scenario not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Scenario not found"
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string 
+                    example: "Agent simulation failed with status code {response.status_code}"
+        '502':
+          description: Bad gateway
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Error connecting to AgentSimulator: {error}"
+
+  /api/update-agent-parameters:
+    post:
+      tags:
+        - Agent
+      summary: Update Agent scenario parameters
+      description: 
+        Fetch an existing scenario from the database, apply parameter changes via the AgentSimulator API, save the new scenario, and return a ZIP bundle containing the updated scenario.
+      parameters:
+        - name: user_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the user
+        - name: scenario_id
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: ID of the scenario to update
+        - name: name
+          in: query
+          required: false
+          schema:
+            type: string
+          description: New name for the updated scenario
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - changed_parameters
+              properties:
+                changed_parameters:
+                  type: string
+                  format: binary
+                  description: JSON file containing the parameter changes
+      responses:
+        '200':
+          description: Successful operation returns a ZIP file with the updated scenario bundle
+          content:
+            application/zip:
+              schema:
+                type: string
+                format: binary
+          headers:
+            X-Scenario-ID:
+              schema:
+                type: integer
+              description: ID of the newly saved scenario
+            Access-Control-Expose-Headers:
+              schema:
+                type: string
+              description: Headers exposed to the client
+              example: "X-Scenario-ID"
+        '400':
+          description: Bad request (missing or invalid args)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Missing user_id or scenario_id"
+        '404':
+          description: Scenario not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Scenario not found"
+        '502':
+          description: Bad gateway
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Could not connect to AgentSimulator: {error}"
+                    

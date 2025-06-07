@@ -1,0 +1,105 @@
+#version: '3.8'
+
+services:
+  controller:
+    build:
+      context: ./backend/controller
+      dockerfile: delivery.Dockerfile
+    container_name: controller
+    restart: unless-stopped
+    networks:
+      - internal
+    volumes:
+      - ./backend/controller:/app
+    secrets: 
+      - pg_password
+    ports:
+      - "8888:8888"
+    environment: # Add database credentials in enviorment
+      DB_USER: controller
+      DB_PASSWORD_FILE: /run/secrets/pg_password # password stored as secret in file.
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: projectdb
+    command: gunicorn -w 2 --timeout=3600 -b 0.0.0.0:8888 api:app
+
+  simod:
+    build:
+      context: ./backend/simod
+      dockerfile: delivery.Dockerfile
+    container_name: simod
+    restart: unless-stopped
+    networks:
+      - internal
+    volumes:
+      - ./backend/simod:/app/simod
+    command: gunicorn -w 1 --timeout=3600 -b 0.0.0.0:6001 api:app
+
+  agent_simulator:
+    build:
+      context: ./backend/agent_simulator
+      dockerfile: delivery.Dockerfile
+    container_name: agent_simulator
+    restart: unless-stopped
+    networks:
+      - internal
+    volumes:
+      - ./backend/agent_simulator:/app/agent_simulator
+    command: gunicorn -w 1 --timeout=3600 -b 0.0.0.0:6002 api:app
+
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    networks:
+      - internal
+    environment:
+      POSTGRES_USER: super
+      POSTGRES_PASSWORD_FILE: /run/secrets/pg_super_password
+      POSTGRES_DB: projectdb
+    secrets: 
+      - pg_password
+      - pg_super_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Specify the volume (storage)
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql # Init DB if volume dont exist
+      - ./init_user.sql:/docker-entrypoint-initdb.d/init_user.sql # Create db users
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: docker/prod-frontend.Dockerfile
+    container_name: frontend
+    restart: unless-stopped
+    networks:
+      - internal
+    command: ["npx", "serve", "-s", "dist", "-l", "5002", "--single"]
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - frontend
+      - controller
+    networks:
+      - internal
+
+
+networks:
+  internal:
+    driver: bridge
+
+# Volume for persistant data in the database
+volumes:
+  postgres_data:
+
+secrets:
+  pg_password:
+    file: pg_password.txt
+  pg_super_password:
+    file: pg_super_password.txt

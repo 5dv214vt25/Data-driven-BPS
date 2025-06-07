@@ -1,0 +1,172 @@
+{
+    "params": {
+        "==================== INITIAL COMMENTS & USAGE ====================": 0,
+
+        "_init_comment0": "This is an example params file that could be used to manipulate the simulations of the AgentSimulator.",
+        "_init_comment1": "With main purpose to showcase what actual parameters could be changed and how this is done.",
+        "_init_comment2": "This should be used from the API in order to change some of the parameters in to the simulator.",
+        "_init_comment3": "If you work on the frontend, this should be a format that you could & should follow for changing the simulator.",
+        "_init_comment4": "If any new parameters are added & working, they should be documented in this file.",
+        "_init_comment5": "This file is parsed in between the discovery & simulation phases! Or when passed through the API.",
+        
+
+
+
+
+
+
+        "==================== GENERAL PARAMETERS ====================": 0,
+
+        "_comment0": "Sets a starttime of the first case to arrive! EX: 2026-01-01 08:00:00+00:00",
+        "start_timestamp": "2026-01-01 08:00:00+00:00",
+
+        "_comment1": "This changes the amount of simulations to run (amount of different output files)! EX: 3",
+        "num_simulations": 1,
+
+        "_comment2": "This changes the amount of cases inside of each simulation. Default is 80% of the cases of the input .csv file! EX: 1000",
+        "new_num_cases_to_simulate": 1000,
+
+        "_comment3": "This changes the distribution of case arrival times! Supports: (normal / mean)",
+        "inter_arrival_distribution": {
+            "distribution": "normal"
+        },
+
+
+        "==================== AGENT SPECIFIC PARAMETERS ====================": 0,
+        
+        "_comment4": "This list does not need to be filled, only values to chnge (from 1 to ? needs to be included)! The count is the amount of each agent. EX {id: 0, count: 0} removes the agent",
+        "agent_count_changes": [
+            { "id": 0, "count": 1 },
+            { "id": 1, "count": 1 },
+            { "id": 2, "count": 1 }, 
+            { "id": 3, "count": 1 },
+            { "id": 4, "count": 1 },
+            { "id": 5, "count": 1 }, 
+            { "id": 6, "count": 1 },
+            { "id": 7, "count": 1 },
+            { "id": 8, "count": 1 }, 
+            { "id": 9, "count": 1 },
+            { "id": 10, "count": 1 },
+            { "id": 11, "count": 1 },
+            { "id": 12, "count": 1 }, 
+            { "id": 13, "count": 1 },
+            { "id": 14, "count": 1 },
+            { "id": 15, "count": 1 }, 
+            { "id": 16, "count": 1 },
+            { "id": 17, "count": 1 },
+            { "id": 18, "count": 1 }
+        ],
+
+
+        "_comment5": "This changes the duration of an agent that it takes to complete an activity!",
+        "agent_activity_durations": [
+            {
+                "agent_id": 0,
+                "overrides": {
+                    "Check application form completeness": 500.0,
+                    "Approve loan offer": 80.0
+                }
+            },
+            {
+                "agent_id": 1,
+                "overrides": {
+                    "AML check":  90.0,
+                    "Check application form completeness": 0.0
+                }
+            }
+        ],
+
+
+        "_comment6": "Here you can change how the agents work, this is a bit buggy with the prints in the outputfile, (an agent can start an activity outside of its worktime, however the agent starts working on it the next day it works)!",
+        "res_calendars": [
+            {
+            "agent_id": 1,
+            "days": ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY"],
+            "schedule": [[["05:00:00", "12:00:00"]],[["07:00:00", "09:00:00"]], [["10:00:00", "12:00:00"]], [["12:00:00", "14:00:00"]]]
+            },
+            {
+            "agent_id": 7,
+            "days": ["MONDAY", "TUESDAY", "WEDNESDAY"],
+            "schedule": [[["09:00:00", "11:00:00"], ["13:00:00", "15:00:00"]], [["11:00:00", "13:00:00"], ["14:00:00", "16:00:00"]], [["08:00:00", "10:00:00"]]]
+            }
+        ],
+            
+            
+        "_comment7": "Here you can override what different activities the agents can preform! EX 1: 4: [AML_CHECK, Check form completeness, zzz_end]",    
+        "agent_activity_mapping": {
+            "agents": {
+                "1": ["AML_CHECK", "Check form completeness", "zzz_end"],
+                "3": ["Appraise property"]
+            }
+        },
+
+        "_comment8": "Here you can change different transition_probabilities!, this should be further looked into later!",
+        "transition_probabilities": {
+            "('Check application form completeness',)": {
+                "0": {
+                "Check credit history": 0.40425531914893614,
+                "Appraise property": 1.0,
+                "AML check": 0.0,
+                "Return application back to applicant": 0.0851063829787234,
+                "Design loan offer": 0.0
+                },
+                "1": {
+                "Appraise property": 1.0,
+                "AML check": 0.0,
+                "Check credit history": 0.3958333333333333,
+                "Return application back to applicant": 0.0763888888888889,
+                "Design loan offer": 0.0
+                },
+                "4": {
+                "Check credit history": 0.3826086956521739,
+                "AML check": 0.0,
+                "Appraise property": 0.22608695652173913,
+                "Return application back to applicant": 0.08695652173913043
+                },
+                "9": {
+                "Check credit history": 0.36363636363636365,
+                "Return application back to applicant": 0.13286713286713286,
+                "AML check": 0.0,
+                "Appraise property": 1.0
+                },
+                "2": {
+                "Check credit history": 0.3511450381679389,
+                "Appraise property": 0.32061068702290074,
+                "AML check": 0.0,
+                "Return application back to applicant": 0.07633587786259542
+                },
+                "6": {
+                "Appraise property": 1.0,
+                "AML check": 0.0,
+                "Check credit history": 0.37398373983739835,
+                "Return application back to applicant": 0.08943089430894309
+                },
+                "5": {
+                "Appraise property": 1.0,
+                "Check credit history": 0.3974358974358974,
+                "AML check": 0.0,
+                "Return application back to applicant": 0.09615384615384616
+                },
+                "10": {
+                "AML check": 0.0,
+                "Appraise property": 1.0,
+                "Check credit history": 0.33548387096774196,
+                "Return application back to applicant": 0.12903225806451613
+                }
+            }
+        },
+
+        "==================== GLOBAL PARAMETERS (try not to use these) ====================": 0,
+
+        "_comment9": "This sets the activity durations for all agents! NOTE: This gets overridden with the agent specific changes!",
+        "global_activity_durations": {
+            "AML check": 60.0,
+            "Assess loan risk": 10.0
+        },
+
+        "_comment10": "Changes the distribution of all acitivites of all agents ? Supports: (normal / mean / stddev)",
+        "new_distribution_activity_duration": {
+            "distribution": "stddev"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+# This file contains the OpenAPI specification for the General endpoints.
+general_paths:
+  /api/health-check:
+    get:
+      tags:
+        - General
+      summary: Health check
+      description: Health check endpoint to ensure the controller is running
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "OK"
+                  message:
+                    type: string
+                    example: "Controller is running."

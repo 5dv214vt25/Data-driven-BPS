@@ -1,0 +1,351 @@
+# This file contains the OpenAPI specification for the Simod Output endpoints.
+simod_output_paths:
+  /storage/upload-simod-output:
+    post:
+      tags:
+        - Simod Output
+      summary: Upload Simod simulation output
+      description: Upload a new Simod simulation output CSV for a given scenario
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - simod_scenario_id
+                - file
+              properties:
+                simod_scenario_id:
+                  type: integer
+                  description: ID of the simod scenario
+                file:
+                  type: string
+                  format: binary
+                  description: CSV file containing the simulation output
+      responses:
+        '201':
+          description: Resource created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  message:
+                    type: string
+                    example: "simod output uploaded successfully."
+                  simod_scenario_id:
+                    type: integer
+        '400':
+          description: Bad request - Invalid input parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "simod_scenario_id is required and must be a valid integer."
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+
+  /storage/list-simod-outputs:
+    get:
+      tags:
+        - Simod Output
+      summary: List Simod simulation outputs
+      description: List all Simod simulation outputs for a given user, optionally filtered by scenario ID
+      parameters:
+        - name: user_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the user
+        - name: scenario_id
+          in: query
+          required: false
+          schema:
+            type: integer
+          description: Optional ID of the scenario to filter by
+      responses:
+        '200':
+          description: Successful operation - returns list of outputs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    simod_scenario_id:
+                      type: integer
+                    event_log_id:
+                      type: integer
+                    filename:
+                      type: string
+                    created_at:
+                      type: string
+                      format: date-time
+        '400':
+          description: Bad request - Invalid input parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "user_id is required."
+        '404':
+          description: No outputs found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "No outputs found for user_id: {user_id}"
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Database error when retrieving simod outputs information"
+
+  /storage/get-simod-output:
+    get:
+      tags:
+        - Simod Output
+      summary: Get Simod simulation output
+      description: Download a single Simod simulation output CSV by scenario ID
+      parameters:
+        - name: simod_scenario_id
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: ID of the simod scenario
+      responses:
+        '200':
+          description: Successful operation - returns CSV file
+          content:
+            text/csv:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: Bad request - Invalid input parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "simod_scenario_id is required."
+        '404':
+          description: Output not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "No output found for simod_scenario_id {simod_scenario_id}."
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+
+  /storage/delete-simod-output:
+    delete:
+      tags:
+        - Simod Output
+      summary: Delete Simod simulation output
+      description: Delete a Simod simulation output by scenario ID
+      parameters:
+        - name: simod_scenario_id
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: ID of the simod scenario
+      responses:
+        '204':
+          description: Resource deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  message:
+                    type: string
+                    example: "simod output deleted successfully."
+        '400':
+          description: Bad request - Invalid input parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "simod_scenario_id is required."
+        '404':
+          description: Output not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "No simod output found for simod_scenario_id {simod_scenario_id}."
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Error deleting simod output: {e}"
+
+  /storage/update-simod-output:
+    put:
+      tags:
+        - Simod Output
+      summary: Update Simod simulation output
+      description: Replace the CSV for an existing Simod simulation output
+      parameters:
+        - name: simod_scenario_id
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: ID of the simod scenario
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: New CSV file containing the updated output
+      responses:
+        '200':
+          description: Resource updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  message:
+                    type: string
+                    example: "simod output updated successfully."
+        '400':
+          description: Bad request - Invalid input parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Uploaded file is empty."
+        '404':
+          description: Output not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "No output found to update for simod_scenario_id {simod_scenario_id}."
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Error updating simod output: Database operation failed."

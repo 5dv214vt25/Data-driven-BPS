@@ -1,0 +1,217 @@
+*.pyc
+bin/
+lib/
+pyvenv.cfg
+
+**.html
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environments (top-level and nested)
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+*/.venv/
+*/venv/
+*/env/
+*/ENV/
+**/.venv/
+**/venv/
+**/env/
+**/ENV/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+*/build/
+*/dist/
+*/eggs/
+*/.eggs/
+*/lib/
+*/lib64/
+**/build/
+**/dist/
+**/eggs/
+**/.eggs/
+**/lib/
+**/lib64/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+*/.tox/
+*/.nox/
+*/.pytest_cache/
+**/.tox/
+**/.nox/
+**/.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+media/
+staticfiles/
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+docs/_output/
+
+# PyBuilder
+target/
+
+# Jupyter/IPython
+.ipynb_checkpoints/
+profile_default/
+ipython_config.py
+*/.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+**/.mypy_cache/
+
+# Pyre type checker
+.pyre/
+
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# GitLab artifacts / temp files
+*.log
+*.tmp
+*.bak
+.cache/
+*.swp
+**/.cache/
+
+# Python object dumps
+**/*.pkl
+*.pkl
+
+# Test LoadApp.csv
+.LoanApp.csv
+
+# Mac finder file
+*.DS_Store
+
+
+
+# Agentsim speciifc excludes
+**.zip
+
+
+# Exclude .zip and .json files only inside test_resources
+agent_simulator/tests/test_resources/*.zip
+agent_simulator/tests/test_resources/*.json
+
+# Also exclude any extracted simulation folders if needed
+agent_simulator/tests/test_resources/simulation/
+agent_simulator/tests/test_resources/received/
+agent_simulator/tests/test_resources/received2/
+
+# Exclude pickle resources
+**/pickle_resources/**
+
+# Kev script to filter out requirements from agent sim
+filter_requirements.py
+**/.simulated_data
+**/simulated_data/
+
+# receive zips from api
+**.zip
+
+# Do not write beneth this row, thank you!
+!simod/**
+!simod/simod_src/**
+simod/simod_src/outputs/
+simod/simod_src/outputs/*
+simod/simod_src/outputs/**
+simod/simod_src/sandler/
+simod/simod_src/sandler/*
+simod/simod_src/sandler/**

@@ -1,0 +1,9 @@
+# Formatting configuration: Black + isort with 120-char lines and single-line imports
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+line_length = 120
+force_single_line = true

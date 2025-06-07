@@ -1,0 +1,55 @@
+.popupContainer {
+  width: 300px;
+  overflow: hidden;
+}
+
+.accountHeader {
+  font-weight: bold;
+  font-size: 20px;
+  padding-bottom: 15px;
+  text-align: center;
+  border-bottom: 1px solid silver;
+  margin-bottom: 15px;
+}
+
+.logoutButton {
+  color: black;
+  border: 1px solid black;
+  width: 100%;
+}
+
+.label {
+  padding-right: 7px;
+  width: 130px;
+  font-size: 20px;
+}
+
+.labelData {
+  display: inline-block;
+  font-size: 20px;
+  color: black;
+}
+
+.datablock {
+  display: block;
+  border-bottom: 1px solid black;
+}
+
+.info-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.info-label {
+  font-weight: 600;
+  font-family: Arial, sans-serif;
+  text-align: left;
+  min-width: 90px;
+}
+
+.info-value {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+}

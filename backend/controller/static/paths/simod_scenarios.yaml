@@ -1,0 +1,329 @@
+# This file contains the OpenAPI specification for the Simod Scenarios endpoints.
+simod_scenarios_paths:
+  /storage/upload-simod-scenario:
+    post:
+      tags:
+        - Simod Scenarios
+      summary: Upload Simod scenario
+      description: Upload a new Simod scenario with BPMN and parameters
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - event_log_id
+                - name
+                - file_bpmn
+                - param_json
+              properties:
+                event_log_id:
+                  type: integer
+                  description: ID of the event log
+                name:
+                  type: string
+                  description: Name of the scenario
+                file_bpmn:
+                  type: string
+                  format: binary
+                  description: BPMN file containing the discovered model
+                param_json:
+                  type: string
+                  format: binary
+                  description: JSON file containing the parameters
+      responses:
+        '201':
+          description: Resource created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  message:
+                    type: string
+                    example: "Scenario uploaded successfully."
+                  scenario_id:
+                    type: string
+        '400':
+          description: Bad request - Invalid input parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "event_log_id must be a valid integer."
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "An error occurred storing the event log: {str(e)}"
+
+  /storage/get-simod-scenario:
+    get:
+      tags:
+        - Simod Scenarios
+      summary: Get Simod scenario
+      description: Get a Simod scenario by ID
+      parameters:
+        - name: scenario_id
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: ID of the scenario to retrieve
+      responses:
+        '200':
+          description: Successful operation - returns ZIP file with scenario files
+          content:
+            application/zip:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: Bad request - Invalid input parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "scenario_id is required."
+        '404':
+          description: Scenario not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Scenario with scenario_id {scenario_id} not found in the database."
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "Invalid scenario data format"
+
+  /storage/list-simod-scenarios:
+    get:
+      tags:
+        - Simod Scenarios
+      summary: List Simod scenarios
+      description: List all Simod scenarios for a user, optionally filtered by event log ID
+      parameters:
+        - name: user_id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the user
+        - name: event_log_id
+          in: query
+          required: false
+          schema:
+            type: integer
+          description: Optional ID of the event log to filter by
+      responses:
+        '200':
+          description: Successful operation - returns list of scenarios
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    scenario_id:
+                      type: integer
+                    event_log_id:
+                      type: integer
+                    name:
+                      type: string
+                    created_at:
+                      type: string
+                      format: date-time
+        '400':
+          description: Bad request - Invalid input parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "user_id is required."
+        '204':
+          description: No scenarios found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "No scenarios found for user_id: {user_id}"
+
+  /storage/update-simod-scenario:
+    put:
+      tags:
+        - Simod Scenarios
+      summary: Update Simod scenario
+      description: Update an existing Simod scenario
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - scenario_id
+              properties:
+                scenario_id:
+                  type: integer
+                  description: ID of the scenario to update
+                name:
+                  type: string
+                  description: New name for the scenario (optional)
+                param_json:
+                  type: string
+                  format: binary
+                  description: New JSON parameters file (optional)
+      responses:
+        '200':
+          description: Resource updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  message:
+                    type: string
+                    example: "Scenario updated successfully."
+                  scenario_id:
+                    type: integer
+        '400':
+          description: Bad request - Invalid input parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "scenario_id must be a valid integer."
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "An error occurred updating the scenario: {str(e)}"
+
+  /storage/delete-simod-scenario:
+    delete:
+      tags:
+        - Simod Scenarios
+      summary: Delete Simod scenario
+      description: Delete a Simod scenario by ID
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - scenario_id
+              properties:
+                scenario_id:
+                  type: integer
+                  description: ID of the scenario to delete
+      responses:
+        '204':
+          description: Resource deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  message:
+                    type: string
+                    example: "Scenario deleted successfully."
+        '400':
+          description: Bad request - Invalid input parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "scenario_id must be a valid integer."
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "error"
+                  message:
+                    type: string
+                    example: "An error occurred deleting the scenario: {str(e)}"

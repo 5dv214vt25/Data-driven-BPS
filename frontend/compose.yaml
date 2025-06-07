@@ -1,0 +1,71 @@
+# ----------------------------------------
+# compose.yaml 🐳
+# ----------------------------------------
+# Purpose:
+#   Builds and runs the images (and/or test images) for the frontend. 
+#
+# Usage:
+#   docker compose up -d [IMAGES-TO-RUN...] --build
+#
+# Notes:
+#
+
+services:
+  # Service for running a development version
+  dev:
+    container_name: frontend_dev
+    image: pvt2025/frontend_app
+    build:
+      context: ./
+      dockerfile: ./docker/dev.Dockerfile
+    ports:
+      - "80:5002"
+    command: ["npm", "run", "dev"]
+
+  # Service for running a development version together with the backend network
+  # locally on the computer.
+  local:
+    container_name: frontend_local
+    image: pvt2025/frontend_app
+    build: 
+      context: ./
+      dockerfile: ./docker/frontend.Dockerfile
+    ports:
+      - "80:5002"
+    networks:
+      - docker_internal
+    environment:
+      - VITE_API_PROXY_TARGET=http://controller:8888
+    command: ["npm", "run", "dev"]
+  
+  # Running the tests
+  test:
+    container_name: test_frontend
+    build:
+      context: ./
+      dockerfile: ./docker/vitest.Dockerfile
+    command: ["npm", "run", "test"]
+
+  # Running the linter
+  lint:
+    container_name: lint_frontend
+    build:
+      context: ./
+      dockerfile: ./docker/lint.Dockerfile
+    command: ["npx", "eslint", "src/", "tests/"]
+
+  # Service for running a stable production version of the frontend
+  stable:
+    container_name: frontend_prod
+    image: pvt2025/frontend_app
+    build:
+      context: ./
+      dockerfile: docker/prod-frontend.Dockerfile
+    ports:
+      - "8080:5002"
+    command: ["npx", "serve", "-s", "dist", "-l", "5002", "--single"]
+
+# Network used to communicate with backend on same computer.
+networks:
+  docker_internal:
+    external: true

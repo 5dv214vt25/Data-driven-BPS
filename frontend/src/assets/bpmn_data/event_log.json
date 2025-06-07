@@ -1,0 +1,4813 @@
+{
+    "process_model": "sandler/best_result/event_log.bpmn",
+    "gateway_branching_probabilities": [
+        {
+            "gateway_id": "node_be8ea9d9-134d-4e95-8dfc-0d671537fc1e",
+            "probabilities": [
+                {
+                    "path_id": "node_45c54828-7277-4340-ac7c-8255a6ec0214",
+                    "value": 0.056308654848800835
+                },
+                {
+                    "path_id": "node_bf7e2939-4b00-4b45-811c-69a98174ffe6",
+                    "value": 0.9436913451511991
+                }
+            ]
+        },
+        {
+            "gateway_id": "node_81e4f8ec-b598-4abe-b0a2-fdbe7b4a81c5",
+            "probabilities": [
+                {
+                    "path_id": "node_f5264771-79ff-4bc9-86d8-e19305e932d6",
+                    "value": 0.5
+                },
+                {
+                    "path_id": "node_9085a5ec-93b8-4666-8b3d-e8919e1e91b8",
+                    "value": 0.5
+                }
+            ]
+        },
+        {
+            "gateway_id": "node_8cf3a650-618f-4a9b-9509-3427fa5da1f8",
+            "probabilities": [
+                {
+                    "path_id": "node_8ea66b56-010d-4e5e-9f10-410f4551b611",
+                    "value": 0.584
+                },
+                {
+                    "path_id": "node_124567db-d667-4b65-b70d-ead5326a3737",
+                    "value": 0.416
+                }
+            ]
+        },
+        {
+            "gateway_id": "node_15a5b1db-a57a-4ead-94be-f89507ea1259",
+            "probabilities": [
+                {
+                    "path_id": "node_7e7a19a6-8dab-435d-8a28-84dda13b7028",
+                    "value": 0.6078767123287672
+                },
+                {
+                    "path_id": "node_46f05b6c-a5ad-4483-a7fe-a5703cd00952",
+                    "value": 0.3921232876712329
+                }
+            ]
+        }
+    ],
+    "arrival_time_calendar": [
+        {
+            "from": "MONDAY",
+            "to": "MONDAY",
+            "beginTime": "07:00:00",
+            "endTime": "16:00:00"
+        },
+        {
+            "from": "TUESDAY",
+            "to": "TUESDAY",
+            "beginTime": "07:00:00",
+            "endTime": "16:00:00"
+        },
+        {
+            "from": "WEDNESDAY",
+            "to": "WEDNESDAY",
+            "beginTime": "07:00:00",
+            "endTime": "16:00:00"
+        },
+        {
+            "from": "THURSDAY",
+            "to": "THURSDAY",
+            "beginTime": "07:00:00",
+            "endTime": "16:00:00"
+        },
+        {
+            "from": "FRIDAY",
+            "to": "FRIDAY",
+            "beginTime": "07:00:00",
+            "endTime": "16:00:00"
+        }
+    ],
+    "arrival_time_distribution": {
+        "distribution_name": "fix",
+        "distribution_params": [
+            {
+                "value": 1800.0
+            }
+        ]
+    },
+    "resource_profiles": [
+        {
+            "id": "Undifferentiated_resource_profile",
+            "name": "Undifferentiated_resource_profile",
+            "resource_list": [
+                {
+                    "id": "Clerk-000001",
+                    "name": "Clerk-000001",
+                    "amount": 1,
+                    "cost_per_hour": 20,
+                    "calendar": "Undifferentiated_calendar",
+                    "assignedTasks": [
+                        "node_cf238e42-7e6c-41cc-91fa-e2c89ca79753",
+                        "node_fd529d82-d0ce-49a8-829f-8651c7ffc323",
+                        "node_208e98f9-4cd0-43b8-8de9-1a897556481e",
+                        "node_8eddf0da-3d77-4082-a219-eef1f3800611",
+                        "node_b0512281-8487-4120-bebf-e2ba919883d6",
+                        "node_8c5b4e64-5a5e-46f5-924b-ec42098a2e8b",
+                        "node_214fd5a4-4b93-4516-a3ec-1a4f2ad8a39d",
+                        "node_aef459f6-a161-4a6b-8f99-28661e17ccd5",
+                        "node_e52e5280-9b60-4103-bb77-adcce40b3efd",
+                        "node_e5b22641-936f-4550-b0e1-2a7f5bac2231",
+                        "node_4b4e5758-bced-4b98-bad8-57cc2f660e41",
+                        "node_257d79a7-9beb-4f1e-b5e9-3442437f532a"
+                    ]
+                },
+                {
+                    "id": "Clerk-000002",
+                    "name": "Clerk-000002",
+                    "amount": 1,
+                    "cost_per_hour": 20,
+                    "calendar": "Undifferentiated_calendar",
+                    "assignedTasks": [
+                        "node_cf238e42-7e6c-41cc-91fa-e2c89ca79753",
+                        "node_fd529d82-d0ce-49a8-829f-8651c7ffc323",
+                        "node_208e98f9-4cd0-43b8-8de9-1a897556481e",
+                        "node_8eddf0da-3d77-4082-a219-eef1f3800611",
+                        "node_b0512281-8487-4120-bebf-e2ba919883d6",
+                        "node_8c5b4e64-5a5e-46f5-924b-ec42098a2e8b",
+                        "node_214fd5a4-4b93-4516-a3ec-1a4f2ad8a39d",
+                        "node_aef459f6-a161-4a6b-8f99-28661e17ccd5",
+                        "node_e52e5280-9b60-4103-bb77-adcce40b3efd",
+                        "node_e5b22641-936f-4550-b0e1-2a7f5bac2231",
+                        "node_4b4e5758-bced-4b98-bad8-57cc2f660e41",
+                        "node_257d79a7-9beb-4f1e-b5e9-3442437f532a"
+                    ]
+                },
+                {
+                    "id": "AML Investigator-000001",
+                    "name": "AML Investigator-000001",
+                    "amount": 1,
+                    "cost_per_hour": 20,
+                    "calendar": "Undifferentiated_calendar",
+                    "assignedTasks": [
+                        "node_cf238e42-7e6c-41cc-91fa-e2c89ca79753",
+                        "node_fd529d82-d0ce-49a8-829f-8651c7ffc323",
+                        "node_208e98f9-4cd0-43b8-8de9-1a897556481e",
+                        "node_8eddf0da-3d77-4082-a219-eef1f3800611",
+                        "node_b0512281-8487-4120-bebf-e2ba919883d6",
+                        "node_8c5b4e64-5a5e-46f5-924b-ec42098a2e8b",
+                        "node_214fd5a4-4b93-4516-a3ec-1a4f2ad8a39d",
+                        "node_aef459f6-a161-4a6b-8f99-28661e17ccd5",
+                        "node_e52e5280-9b60-4103-bb77-adcce40b3efd",
+                        "node_e5b22641-936f-4550-b0e1-2a7f5bac2231",
+                        "node_4b4e5758-bced-4b98-bad8-57cc2f660e41",
+                        "node_257d79a7-9beb-4f1e-b5e9-3442437f532a"
+                    ]
+                },
+                {
+                    "id": "Appraiser-000001",
+                    "name": "Appraiser-000001",
+                    "amount": 1,
+                    "cost_per_hour": 20,
+                    "calendar": "Undifferentiated_calendar",
+                    "assignedTasks": [
+                        "node_cf238e42-7e6c-41cc-91fa-e2c89ca79753",
+                        "node_fd529d82-d0ce-49a8-829f-8651c7ffc323",
+                        "node_208e98f9-4cd0-43b8-8de9-1a897556481e",
+                        "node_8eddf0da-3d77-4082-a219-eef1f3800611",
+                        "node_b0512281-8487-4120-bebf-e2ba919883d6",
+                        "node_8c5b4e64-5a5e-46f5-924b-ec42098a2e8b",
+                        "node_214fd5a4-4b93-4516-a3ec-1a4f2ad8a39d",
+                        "node_aef459f6-a161-4a6b-8f99-28661e17ccd5",
+                        "node_e52e5280-9b60-4103-bb77-adcce40b3efd",
+                        "node_e5b22641-936f-4550-b0e1-2a7f5bac2231",
+                        "node_4b4e5758-bced-4b98-bad8-57cc2f660e41",
+                        "node_257d79a7-9beb-4f1e-b5e9-3442437f532a"
+                    ]
+                },
+                {
+                    "id": "Clerk-000003",
+                    "name": "Clerk-000003",
+                    "amount": 1,
+                    "cost_per_hour": 20,
+                    "calendar": "Undifferentiated_calendar",
+                    "assignedTasks": [
+                        "node_cf238e42-7e6c-41cc-91fa-e2c89ca79753",
+                        "node_fd529d82-d0ce-49a8-829f-8651c7ffc323",
+                        "node_208e98f9-4cd0-43b8-8de9-1a897556481e",
+                        "node_8eddf0da-3d77-4082-a219-eef1f3800611",
+                        "node_b0512281-8487-4120-bebf-e2ba919883d6",
+                        "node_8c5b4e64-5a5e-46f5-924b-ec42098a2e8b",
+                        "node_214fd5a4-4b93-4516-a3ec-1a4f2ad8a39d",
+                        "node_aef459f6-a161-4a6b-8f99-28661e17ccd5",
+                        "node_e52e5280-9b60-4103-bb77-adcce40b3efd",
+                        "node_e5b22641-936f-4550-b0e1-2a7f5bac2231",
+                        "node_4b4e5758-bced-4b98-bad8-57cc2f660e41",
+                        "node_257d79a7-9beb-4f1e-b5e9-3442437f532a"
+                    ]
+                },
+                {
+                    "id": "Appraiser-000002",
+                    "name": "Appraiser-000002",
+                    "amount": 1,
+                    "cost_per_hour": 20,
+                    "calendar": "Undifferentiated_calendar",
+                    "assignedTasks": [
+                        "node_cf238e42-7e6c-41cc-91fa-e2c89ca79753",
+                        "node_fd529d82-d0ce-49a8-829f-8651c7ffc323",
+                        "node_208e98f9-4cd0-43b8-8de9-1a897556481e",
+                        "node_8eddf0da-3d77-4082-a219-eef1f3800611",
+                        "node_b0512281-8487-4120-bebf-e2ba919883d6",
+                        "node_8c5b4e64-5a5e-46f5-924b-ec42098a2e8b",
+                        "node_214fd5a4-4b93-4516-a3ec-1a4f2ad8a39d",
+                        "node_aef459f6-a161-4a6b-8f99-28661e17ccd5",
+                        "node_e52e5280-9b60-4103-bb77-adcce40b3efd",
+                        "node_e5b22641-936f-4550-b0e1-2a7f5bac2231",
+                        "node_4b4e5758-bced-4b98-bad8-57cc2f660e41",
+                        "node_257d79a7-9beb-4f1e-b5e9-3442437f532a"
+                    ]
+                },
+                {
+                    "id": "Clerk-000004",
+                    "name": "Clerk-000004",
+                    "amount": 1,
+                    "cost_per_hour": 20,
+                    "calendar": "Undifferentiated_calendar",
+                    "assignedTasks": [
+                        "node_cf238e42-7e6c-41cc-91fa-e2c89ca79753",
+                        "node_fd529d82-d0ce-49a8-829f-8651c7ffc323",
+                        "node_208e98f9-4cd0-43b8-8de9-1a897556481e",
+                        "node_8eddf0da-3d77-4082-a219-eef1f3800611",
+                        "node_b0512281-8487-4120-bebf-e2ba919883d6",
+                        "node_8c5b4e64-5a5e-46f5-924b-ec42098a2e8b",
+                        "node_214fd5a4-4b93-4516-a3ec-1a4f2ad8a39d",
+                        "node_aef459f6-a161-4a6b-8f99-28661e17ccd5",
+                        "node_e52e5280-9b60-4103-bb77-adcce40b3efd",
+                        "node_e5b22641-936f-4550-b0e1-2a7f5bac2231",
+                        "node_4b4e5758-bced-4b98-bad8-57cc2f660e41",
+                        "node_257d79a7-9beb-4f1e-b5e9-3442437f532a"
+                    ]
+                },
+                {
+                    "id": "AML Investigator-000002",
+                    "name": "AML Investigator-000002",
+                    "amount": 1,
+                    "cost_per_hour": 20,
+                    "calendar": "Undifferentiated_calendar",
+                    "assignedTasks": [
+                        "node_cf238e42-7e6c-41cc-91fa-e2c89ca79753",
+                        "node_fd529d82-d0ce-49a8-829f-8651c7ffc323",
+                        "node_208e98f9-4cd0-43b8-8de9-1a897556481e",
+                        "node_8eddf0da-3d77-4082-a219-eef1f3800611",
+                        "node_b0512281-8487-4120-bebf-e2ba919883d6",
+                        "node_8c5b4e64-5a5e-46f5-924b-ec42098a2e8b",
+                        "node_214fd5a4-4b93-4516-a3ec-1a4f2ad8a39d",
+                        "node_aef459f6-a161-4a6b-8f99-28661e17ccd5",
+                        "node_e52e5280-9b60-4103-bb77-adcce40b3efd",
+                        "node_e5b22641-936f-4550-b0e1-2a7f5bac2231",
+                        "node_4b4e5758-bced-4b98-bad8-57cc2f660e41",
+                        "node_257d79a7-9beb-4f1e-b5e9-3442437f532a"
+                    ]
+                },
+                {
+                    "id": "Clerk-000005",
+                    "name": "Clerk-000005",
+                    "amount": 1,
+                    "cost_per_hour": 20,
+                    "calendar": "Undifferentiated_calendar",
+                    "assignedTasks": [
+                        "node_cf238e42-7e6c-41cc-91fa-e2c89ca79753",
+                        "node_fd529d82-d0ce-49a8-829f-8651c7ffc323",
+                        "node_208e98f9-4cd0-43b8-8de9-1a897556481e",
+                        "node_8eddf0da-3d77-4082-a219-eef1f3800611",
+                        "node_b0512281-8487-4120-bebf-e2ba919883d6",
+                        "node_8c5b4e64-5a5e-46f5-924b-ec42098a2e8b",
+                        "node_214fd5a4-4b93-4516-a3ec-1a4f2ad8a39d",
+                        "node_aef459f6-a161-4a6b-8f99-28661e17ccd5",
+                        "node_e52e5280-9b60-4103-bb77-adcce40b3efd",
+                        "node_e5b22641-936f-4550-b0e1-2a7f5bac2231",
+                        "node_4b4e5758-bced-4b98-bad8-57cc2f660e41",
+                        "node_257d79a7-9beb-4f1e-b5e9-3442437f532a"
+                    ]
+                },
+                {
+                    "id": "Clerk-000006",
+                    "name": "Clerk-000006",
+                    "amount": 1,
+                    "cost_per_hour": 20,
+                    "calendar": "Undifferentiated_calendar",
+                    "assignedTasks": [
+                        "node_cf238e42-7e6c-41cc-91fa-e2c89ca79753",
+                        "node_fd529d82-d0ce-49a8-829f-8651c7ffc323",
+                        "node_208e98f9-4cd0-43b8-8de9-1a897556481e",
+                        "node_8eddf0da-3d77-4082-a219-eef1f3800611",
+                        "node_b0512281-8487-4120-bebf-e2ba919883d6",
+                        "node_8c5b4e64-5a5e-46f5-924b-ec42098a2e8b",
+                        "node_214fd5a4-4b93-4516-a3ec-1a4f2ad8a39d",
+                        "node_aef459f6-a161-4a6b-8f99-28661e17ccd5",
+                        "node_e52e5280-9b60-4103-bb77-adcce40b3efd",
+                        "node_e5b22641-936f-4550-b0e1-2a7f5bac2231",
+                        "node_4b4e5758-bced-4b98-bad8-57cc2f660e41",
+                        "node_257d79a7-9beb-4f1e-b5e9-3442437f532a"
+                    ]
+                },
+                {
+                    "id": "Clerk-000007",
+                    "name": "Clerk-000007",
+                    "amount": 1,
+                    "cost_per_hour": 20,
+                    "calendar": "Undifferentiated_calendar",
+                    "assignedTasks": [
+                        "node_cf238e42-7e6c-41cc-91fa-e2c89ca79753",
+                        "node_fd529d82-d0ce-49a8-829f-8651c7ffc323",
+                        "node_208e98f9-4cd0-43b8-8de9-1a897556481e",
+                        "node_8eddf0da-3d77-4082-a219-eef1f3800611",
+                        "node_b0512281-8487-4120-bebf-e2ba919883d6",
+                        "node_8c5b4e64-5a5e-46f5-924b-ec42098a2e8b",
+                        "node_214fd5a4-4b93-4516-a3ec-1a4f2ad8a39d",
+                        "node_aef459f6-a161-4a6b-8f99-28661e17ccd5",
+                        "node_e52e5280-9b60-4103-bb77-adcce40b3efd",
+                        "node_e5b22641-936f-4550-b0e1-2a7f5bac2231",
+                        "node_4b4e5758-bced-4b98-bad8-57cc2f660e41",
+                        "node_257d79a7-9beb-4f1e-b5e9-3442437f532a"
+                    ]
+                },
+                {
+                    "id": "Loan Officer-000001",
+                    "name": "Loan Officer-000001",
+                    "amount": 1,
+                    "cost_per_hour": 20,
+                    "calendar": "Undifferentiated_calendar",
+                    "assignedTasks": [
+                        "node_cf238e42-7e6c-41cc-91fa-e2c89ca79753",
+                        "node_fd529d82-d0ce-49a8-829f-8651c7ffc323",
+                        "node_208e98f9-4cd0-43b8-8de9-1a897556481e",
+                        "node_8eddf0da-3d77-4082-a219-eef1f3800611",
+                        "node_b0512281-8487-4120-bebf-e2ba919883d6",
+                        "node_8c5b4e64-5a5e-46f5-924b-ec42098a2e8b",
+                        "node_214fd5a4-4b93-4516-a3ec-1a4f2ad8a39d",
+                        "node_aef459f6-a161-4a6b-8f99-28661e17ccd5",
+                        "node_e52e5280-9b60-4103-bb77-adcce40b3efd",
+                        "node_e5b22641-936f-4550-b0e1-2a7f5bac2231",
+                        "node_4b4e5758-bced-4b98-bad8-57cc2f660e41",
+                        "node_257d79a7-9beb-4f1e-b5e9-3442437f532a"
+                    ]
+                },
+                {
+                    "id": "Clerk-000008",
+                    "name": "Clerk-000008",
+                    "amount": 1,
+                    "cost_per_hour": 20,
+                    "calendar": "Undifferentiated_calendar",
+                    "assignedTasks": [
+                        "node_cf238e42-7e6c-41cc-91fa-e2c89ca79753",
+                        "node_fd529d82-d0ce-49a8-829f-8651c7ffc323",
+                        "node_208e98f9-4cd0-43b8-8de9-1a897556481e",
+                        "node_8eddf0da-3d77-4082-a219-eef1f3800611",
+                        "node_b0512281-8487-4120-bebf-e2ba919883d6",
+                        "node_8c5b4e64-5a5e-46f5-924b-ec42098a2e8b",
+                        "node_214fd5a4-4b93-4516-a3ec-1a4f2ad8a39d",
+                        "node_aef459f6-a161-4a6b-8f99-28661e17ccd5",
+                        "node_e52e5280-9b60-4103-bb77-adcce40b3efd",
+                        "node_e5b22641-936f-4550-b0e1-2a7f5bac2231",
+                        "node_4b4e5758-bced-4b98-bad8-57cc2f660e41",
+                        "node_257d79a7-9beb-4f1e-b5e9-3442437f532a"
+                    ]
+                },
+                {
+                    "id": "Loan Officer-000002",
+                    "name": "Loan Officer-000002",
+                    "amount": 1,
+                    "cost_per_hour": 20,
+                    "calendar": "Undifferentiated_calendar",
+                    "assignedTasks": [
+                        "node_cf238e42-7e6c-41cc-91fa-e2c89ca79753",
+                        "node_fd529d82-d0ce-49a8-829f-8651c7ffc323",
+                        "node_208e98f9-4cd0-43b8-8de9-1a897556481e",
+                        "node_8eddf0da-3d77-4082-a219-eef1f3800611",
+                        "node_b0512281-8487-4120-bebf-e2ba919883d6",
+                        "node_8c5b4e64-5a5e-46f5-924b-ec42098a2e8b",
+                        "node_214fd5a4-4b93-4516-a3ec-1a4f2ad8a39d",
+                        "node_aef459f6-a161-4a6b-8f99-28661e17ccd5",
+                        "node_e52e5280-9b60-4103-bb77-adcce40b3efd",
+                        "node_e5b22641-936f-4550-b0e1-2a7f5bac2231",
+                        "node_4b4e5758-bced-4b98-bad8-57cc2f660e41",
+                        "node_257d79a7-9beb-4f1e-b5e9-3442437f532a"
+                    ]
+                },
+                {
+                    "id": "Senior Officer-000001",
+                    "name": "Senior Officer-000001",
+                    "amount": 1,
+                    "cost_per_hour": 20,
+                    "calendar": "Undifferentiated_calendar",
+                    "assignedTasks": [
+                        "node_cf238e42-7e6c-41cc-91fa-e2c89ca79753",
+                        "node_fd529d82-d0ce-49a8-829f-8651c7ffc323",
+                        "node_208e98f9-4cd0-43b8-8de9-1a897556481e",
+                        "node_8eddf0da-3d77-4082-a219-eef1f3800611",
+                        "node_b0512281-8487-4120-bebf-e2ba919883d6",
+                        "node_8c5b4e64-5a5e-46f5-924b-ec42098a2e8b",
+                        "node_214fd5a4-4b93-4516-a3ec-1a4f2ad8a39d",
+                        "node_aef459f6-a161-4a6b-8f99-28661e17ccd5",
+                        "node_e52e5280-9b60-4103-bb77-adcce40b3efd",
+                        "node_e5b22641-936f-4550-b0e1-2a7f5bac2231",
+                        "node_4b4e5758-bced-4b98-bad8-57cc2f660e41",
+                        "node_257d79a7-9beb-4f1e-b5e9-3442437f532a"
+                    ]
+                },
+                {
+                    "id": "Loan Officer-000003",
+                    "name": "Loan Officer-000003",
+                    "amount": 1,
+                    "cost_per_hour": 20,
+                    "calendar": "Undifferentiated_calendar",
+                    "assignedTasks": [
+                        "node_cf238e42-7e6c-41cc-91fa-e2c89ca79753",
+                        "node_fd529d82-d0ce-49a8-829f-8651c7ffc323",
+                        "node_208e98f9-4cd0-43b8-8de9-1a897556481e",
+                        "node_8eddf0da-3d77-4082-a219-eef1f3800611",
+                        "node_b0512281-8487-4120-bebf-e2ba919883d6",
+                        "node_8c5b4e64-5a5e-46f5-924b-ec42098a2e8b",
+                        "node_214fd5a4-4b93-4516-a3ec-1a4f2ad8a39d",
+                        "node_aef459f6-a161-4a6b-8f99-28661e17ccd5",
+                        "node_e52e5280-9b60-4103-bb77-adcce40b3efd",
+                        "node_e5b22641-936f-4550-b0e1-2a7f5bac2231",
+                        "node_4b4e5758-bced-4b98-bad8-57cc2f660e41",
+                        "node_257d79a7-9beb-4f1e-b5e9-3442437f532a"
+                    ]
+                },
+                {
+                    "id": "Loan Officer-000004",
+                    "name": "Loan Officer-000004",
+                    "amount": 1,
+                    "cost_per_hour": 20,
+                    "calendar": "Undifferentiated_calendar",
+                    "assignedTasks": [
+                        "node_cf238e42-7e6c-41cc-91fa-e2c89ca79753",
+                        "node_fd529d82-d0ce-49a8-829f-8651c7ffc323",
+                        "node_208e98f9-4cd0-43b8-8de9-1a897556481e",
+                        "node_8eddf0da-3d77-4082-a219-eef1f3800611",
+                        "node_b0512281-8487-4120-bebf-e2ba919883d6",
+                        "node_8c5b4e64-5a5e-46f5-924b-ec42098a2e8b",
+                        "node_214fd5a4-4b93-4516-a3ec-1a4f2ad8a39d",
+                        "node_aef459f6-a161-4a6b-8f99-28661e17ccd5",
+                        "node_e52e5280-9b60-4103-bb77-adcce40b3efd",
+                        "node_e5b22641-936f-4550-b0e1-2a7f5bac2231",
+                        "node_4b4e5758-bced-4b98-bad8-57cc2f660e41",
+                        "node_257d79a7-9beb-4f1e-b5e9-3442437f532a"
+                    ]
+                },
+                {
+                    "id": "Senior Officer-000002",
+                    "name": "Senior Officer-000002",
+                    "amount": 1,
+                    "cost_per_hour": 20,
+                    "calendar": "Undifferentiated_calendar",
+                    "assignedTasks": [
+                        "node_cf238e42-7e6c-41cc-91fa-e2c89ca79753",
+                        "node_fd529d82-d0ce-49a8-829f-8651c7ffc323",
+                        "node_208e98f9-4cd0-43b8-8de9-1a897556481e",
+                        "node_8eddf0da-3d77-4082-a219-eef1f3800611",
+                        "node_b0512281-8487-4120-bebf-e2ba919883d6",
+                        "node_8c5b4e64-5a5e-46f5-924b-ec42098a2e8b",
+                        "node_214fd5a4-4b93-4516-a3ec-1a4f2ad8a39d",
+                        "node_aef459f6-a161-4a6b-8f99-28661e17ccd5",
+                        "node_e52e5280-9b60-4103-bb77-adcce40b3efd",
+                        "node_e5b22641-936f-4550-b0e1-2a7f5bac2231",
+                        "node_4b4e5758-bced-4b98-bad8-57cc2f660e41",
+                        "node_257d79a7-9beb-4f1e-b5e9-3442437f532a"
+                    ]
+                },
+                {
+                    "id": "Applicant-000001",
+                    "name": "Applicant-000001",
+                    "amount": 1,
+                    "cost_per_hour": 20,
+                    "calendar": "Undifferentiated_calendar",
+                    "assignedTasks": [
+                        "node_cf238e42-7e6c-41cc-91fa-e2c89ca79753",
+                        "node_fd529d82-d0ce-49a8-829f-8651c7ffc323",
+                        "node_208e98f9-4cd0-43b8-8de9-1a897556481e",
+                        "node_8eddf0da-3d77-4082-a219-eef1f3800611",
+                        "node_b0512281-8487-4120-bebf-e2ba919883d6",
+                        "node_8c5b4e64-5a5e-46f5-924b-ec42098a2e8b",
+                        "node_214fd5a4-4b93-4516-a3ec-1a4f2ad8a39d",
+                        "node_aef459f6-a161-4a6b-8f99-28661e17ccd5",
+                        "node_e52e5280-9b60-4103-bb77-adcce40b3efd",
+                        "node_e5b22641-936f-4550-b0e1-2a7f5bac2231",
+                        "node_4b4e5758-bced-4b98-bad8-57cc2f660e41",
+                        "node_257d79a7-9beb-4f1e-b5e9-3442437f532a"
+                    ]
+                }
+            ]
+        }
+    ],
+    "resource_calendars": [
+        {
+            "id": "Undifferentiated_calendar",
+            "name": "Undifferentiated_calendar",
+            "time_periods": [
+                {
+                    "from": "MONDAY",
+                    "to": "MONDAY",
+                    "beginTime": "06:56:00",
+                    "endTime": "07:00:00"
+                },
+                {
+                    "from": "MONDAY",
+                    "to": "MONDAY",
+                    "beginTime": "08:00:00",
+                    "endTime": "10:40:00"
+                },
+                {
+                    "from": "MONDAY",
+                    "to": "MONDAY",
+                    "beginTime": "11:44:00",
+                    "endTime": "12:00:00"
+                },
+                {
+                    "from": "MONDAY",
+                    "to": "MONDAY",
+                    "beginTime": "11:12:00",
+                    "endTime": "11:44:00"
+                },
+                {
+                    "from": "MONDAY",
+                    "to": "MONDAY",
+                    "beginTime": "12:48:00",
+                    "endTime": "13:00:00"
+                },
+                {
+                    "from": "MONDAY",
+                    "to": "MONDAY",
+                    "beginTime": "12:16:00",
+                    "endTime": "12:48:00"
+                },
+                {
+                    "from": "MONDAY",
+                    "to": "MONDAY",
+                    "beginTime": "13:52:00",
+                    "endTime": "14:00:00"
+                },
+                {
+                    "from": "MONDAY",
+                    "to": "MONDAY",
+                    "beginTime": "13:20:00",
+                    "endTime": "13:52:00"
+                },
+                {
+                    "from": "MONDAY",
+                    "to": "MONDAY",
+                    "beginTime": "14:56:00",
+                    "endTime": "15:00:00"
+                },
+                {
+                    "from": "MONDAY",
+                    "to": "MONDAY",
+                    "beginTime": "14:24:00",
+                    "endTime": "14:56:00"
+                },
+                {
+                    "from": "TUESDAY",
+                    "to": "TUESDAY",
+                    "beginTime": "06:56:00",
+                    "endTime": "07:00:00"
+                },
+                {
+                    "from": "TUESDAY",
+                    "to": "TUESDAY",
+                    "beginTime": "08:00:00",
+                    "endTime": "10:40:00"
+                },
+                {
+                    "from": "TUESDAY",
+                    "to": "TUESDAY",
+                    "beginTime": "11:44:00",
+                    "endTime": "12:00:00"
+                },
+                {
+                    "from": "TUESDAY",
+                    "to": "TUESDAY",
+                    "beginTime": "11:12:00",
+                    "endTime": "11:44:00"
+                },
+                {
+                    "from": "TUESDAY",
+                    "to": "TUESDAY",
+                    "beginTime": "12:48:00",
+                    "endTime": "13:00:00"
+                },
+                {
+                    "from": "TUESDAY",
+                    "to": "TUESDAY",
+                    "beginTime": "12:16:00",
+                    "endTime": "12:48:00"
+                },
+                {
+                    "from": "TUESDAY",
+                    "to": "TUESDAY",
+                    "beginTime": "13:52:00",
+                    "endTime": "14:00:00"
+                },
+                {
+                    "from": "TUESDAY",
+                    "to": "TUESDAY",
+                    "beginTime": "13:20:00",
+                    "endTime": "13:52:00"
+                },
+                {
+                    "from": "TUESDAY",
+                    "to": "TUESDAY",
+                    "beginTime": "14:56:00",
+                    "endTime": "15:00:00"
+                },
+                {
+                    "from": "TUESDAY",
+                    "to": "TUESDAY",
+                    "beginTime": "14:24:00",
+                    "endTime": "14:56:00"
+                },
+                {
+                    "from": "WEDNESDAY",
+                    "to": "WEDNESDAY",
+                    "beginTime": "06:56:00",
+                    "endTime": "07:00:00"
+                },
+                {
+                    "from": "WEDNESDAY",
+                    "to": "WEDNESDAY",
+                    "beginTime": "08:00:00",
+                    "endTime": "10:40:00"
+                },
+                {
+                    "from": "WEDNESDAY",
+                    "to": "WEDNESDAY",
+                    "beginTime": "11:44:00",
+                    "endTime": "12:00:00"
+                },
+                {
+                    "from": "WEDNESDAY",
+                    "to": "WEDNESDAY",
+                    "beginTime": "11:12:00",
+                    "endTime": "11:44:00"
+                },
+                {
+                    "from": "WEDNESDAY",
+                    "to": "WEDNESDAY",
+                    "beginTime": "12:48:00",
+                    "endTime": "13:00:00"
+                },
+                {
+                    "from": "WEDNESDAY",
+                    "to": "WEDNESDAY",
+                    "beginTime": "12:16:00",
+                    "endTime": "12:48:00"
+                },
+                {
+                    "from": "WEDNESDAY",
+                    "to": "WEDNESDAY",
+                    "beginTime": "13:52:00",
+                    "endTime": "14:00:00"
+                },
+                {
+                    "from": "WEDNESDAY",
+                    "to": "WEDNESDAY",
+                    "beginTime": "13:20:00",
+                    "endTime": "13:52:00"
+                },
+                {
+                    "from": "WEDNESDAY",
+                    "to": "WEDNESDAY",
+                    "beginTime": "14:56:00",
+                    "endTime": "15:00:00"
+                },
+                {
+                    "from": "WEDNESDAY",
+                    "to": "WEDNESDAY",
+                    "beginTime": "14:24:00",
+                    "endTime": "14:56:00"
+                },
+                {
+                    "from": "THURSDAY",
+                    "to": "THURSDAY",
+                    "beginTime": "06:56:00",
+                    "endTime": "07:00:00"
+                },
+                {
+                    "from": "THURSDAY",
+                    "to": "THURSDAY",
+                    "beginTime": "08:00:00",
+                    "endTime": "10:40:00"
+                },
+                {
+                    "from": "THURSDAY",
+                    "to": "THURSDAY",
+                    "beginTime": "11:44:00",
+                    "endTime": "12:00:00"
+                },
+                {
+                    "from": "THURSDAY",
+                    "to": "THURSDAY",
+                    "beginTime": "11:12:00",
+                    "endTime": "11:44:00"
+                },
+                {
+                    "from": "THURSDAY",
+                    "to": "THURSDAY",
+                    "beginTime": "12:48:00",
+                    "endTime": "13:00:00"
+                },
+                {
+                    "from": "THURSDAY",
+                    "to": "THURSDAY",
+                    "beginTime": "12:16:00",
+                    "endTime": "12:48:00"
+                },
+                {
+                    "from": "THURSDAY",
+                    "to": "THURSDAY",
+                    "beginTime": "13:52:00",
+                    "endTime": "14:00:00"
+                },
+                {
+                    "from": "THURSDAY",
+                    "to": "THURSDAY",
+                    "beginTime": "13:20:00",
+                    "endTime": "13:52:00"
+                },
+                {
+                    "from": "THURSDAY",
+                    "to": "THURSDAY",
+                    "beginTime": "14:56:00",
+                    "endTime": "15:00:00"
+                },
+                {
+                    "from": "THURSDAY",
+                    "to": "THURSDAY",
+                    "beginTime": "14:24:00",
+                    "endTime": "14:56:00"
+                },
+                {
+                    "from": "FRIDAY",
+                    "to": "FRIDAY",
+                    "beginTime": "06:56:00",
+                    "endTime": "07:00:00"
+                },
+                {
+                    "from": "FRIDAY",
+                    "to": "FRIDAY",
+                    "beginTime": "08:00:00",
+                    "endTime": "10:40:00"
+                },
+                {
+                    "from": "FRIDAY",
+                    "to": "FRIDAY",
+                    "beginTime": "11:44:00",
+                    "endTime": "12:00:00"
+                },
+                {
+                    "from": "FRIDAY",
+                    "to": "FRIDAY",
+                    "beginTime": "11:12:00",
+                    "endTime": "11:44:00"
+                },
+                {
+                    "from": "FRIDAY",
+                    "to": "FRIDAY",
+                    "beginTime": "12:48:00",
+                    "endTime": "13:00:00"
+                },
+                {
+                    "from": "FRIDAY",
+                    "to": "FRIDAY",
+                    "beginTime": "12:16:00",
+                    "endTime": "12:48:00"
+                },
+                {
+                    "from": "FRIDAY",
+                    "to": "FRIDAY",
+                    "beginTime": "13:52:00",
+                    "endTime": "14:00:00"
+                },
+                {
+                    "from": "FRIDAY",
+                    "to": "FRIDAY",
+                    "beginTime": "13:20:00",
+                    "endTime": "13:52:00"
+                },
+                {
+                    "from": "FRIDAY",
+                    "to": "FRIDAY",
+                    "beginTime": "14:56:00",
+                    "endTime": "15:00:00"
+                },
+                {
+                    "from": "FRIDAY",
+                    "to": "FRIDAY",
+                    "beginTime": "14:24:00",
+                    "endTime": "14:56:00"
+                }
+            ]
+        }
+    ],
+    "task_resource_distribution": [
+        {
+            "task_id": "node_208e98f9-4cd0-43b8-8de9-1a897556481e",
+            "resources": [
+                {
+                    "resource_id": "Clerk-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 803.0316470739998
+                        },
+                        {
+                            "value": 1444083.0478753443
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7893.718000000001
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 803.0316470739998
+                        },
+                        {
+                            "value": 1444083.0478753443
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7893.718000000001
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 803.0316470739998
+                        },
+                        {
+                            "value": 1444083.0478753443
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7893.718000000001
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 803.0316470739998
+                        },
+                        {
+                            "value": 1444083.0478753443
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7893.718000000001
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000003",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 803.0316470739998
+                        },
+                        {
+                            "value": 1444083.0478753443
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7893.718000000001
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 803.0316470739998
+                        },
+                        {
+                            "value": 1444083.0478753443
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7893.718000000001
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000004",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 803.0316470739998
+                        },
+                        {
+                            "value": 1444083.0478753443
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7893.718000000001
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 803.0316470739998
+                        },
+                        {
+                            "value": 1444083.0478753443
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7893.718000000001
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000005",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 803.0316470739998
+                        },
+                        {
+                            "value": 1444083.0478753443
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7893.718000000001
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000006",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 803.0316470739998
+                        },
+                        {
+                            "value": 1444083.0478753443
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7893.718000000001
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000007",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 803.0316470739998
+                        },
+                        {
+                            "value": 1444083.0478753443
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7893.718000000001
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 803.0316470739998
+                        },
+                        {
+                            "value": 1444083.0478753443
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7893.718000000001
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000008",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 803.0316470739998
+                        },
+                        {
+                            "value": 1444083.0478753443
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7893.718000000001
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 803.0316470739998
+                        },
+                        {
+                            "value": 1444083.0478753443
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7893.718000000001
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 803.0316470739998
+                        },
+                        {
+                            "value": 1444083.0478753443
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7893.718000000001
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000003",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 803.0316470739998
+                        },
+                        {
+                            "value": 1444083.0478753443
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7893.718000000001
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000004",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 803.0316470739998
+                        },
+                        {
+                            "value": 1444083.0478753443
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7893.718000000001
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 803.0316470739998
+                        },
+                        {
+                            "value": 1444083.0478753443
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7893.718000000001
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Applicant-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 803.0316470739998
+                        },
+                        {
+                            "value": 1444083.0478753443
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7893.718000000001
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "task_id": "node_257d79a7-9beb-4f1e-b5e9-3442437f532a",
+            "resources": [
+                {
+                    "resource_id": "Clerk-000001",
+                    "distribution_name": "expon",
+                    "distribution_params": [
+                        {
+                            "value": 1648.8261945648146
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 3600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000002",
+                    "distribution_name": "expon",
+                    "distribution_params": [
+                        {
+                            "value": 1648.8261945648146
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 3600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000001",
+                    "distribution_name": "expon",
+                    "distribution_params": [
+                        {
+                            "value": 1648.8261945648146
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 3600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000001",
+                    "distribution_name": "expon",
+                    "distribution_params": [
+                        {
+                            "value": 1648.8261945648146
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 3600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000003",
+                    "distribution_name": "expon",
+                    "distribution_params": [
+                        {
+                            "value": 1648.8261945648146
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 3600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000002",
+                    "distribution_name": "expon",
+                    "distribution_params": [
+                        {
+                            "value": 1648.8261945648146
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 3600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000004",
+                    "distribution_name": "expon",
+                    "distribution_params": [
+                        {
+                            "value": 1648.8261945648146
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 3600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000002",
+                    "distribution_name": "expon",
+                    "distribution_params": [
+                        {
+                            "value": 1648.8261945648146
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 3600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000005",
+                    "distribution_name": "expon",
+                    "distribution_params": [
+                        {
+                            "value": 1648.8261945648146
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 3600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000006",
+                    "distribution_name": "expon",
+                    "distribution_params": [
+                        {
+                            "value": 1648.8261945648146
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 3600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000007",
+                    "distribution_name": "expon",
+                    "distribution_params": [
+                        {
+                            "value": 1648.8261945648146
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 3600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000001",
+                    "distribution_name": "expon",
+                    "distribution_params": [
+                        {
+                            "value": 1648.8261945648146
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 3600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000008",
+                    "distribution_name": "expon",
+                    "distribution_params": [
+                        {
+                            "value": 1648.8261945648146
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 3600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000002",
+                    "distribution_name": "expon",
+                    "distribution_params": [
+                        {
+                            "value": 1648.8261945648146
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 3600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000001",
+                    "distribution_name": "expon",
+                    "distribution_params": [
+                        {
+                            "value": 1648.8261945648146
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 3600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000003",
+                    "distribution_name": "expon",
+                    "distribution_params": [
+                        {
+                            "value": 1648.8261945648146
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 3600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000004",
+                    "distribution_name": "expon",
+                    "distribution_params": [
+                        {
+                            "value": 1648.8261945648146
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 3600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000002",
+                    "distribution_name": "expon",
+                    "distribution_params": [
+                        {
+                            "value": 1648.8261945648146
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 3600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Applicant-000001",
+                    "distribution_name": "expon",
+                    "distribution_params": [
+                        {
+                            "value": 1648.8261945648146
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 3600.0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "task_id": "node_8eddf0da-3d77-4082-a219-eef1f3800611",
+            "resources": [
+                {
+                    "resource_id": "Clerk-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 784.0626020769998
+                        },
+                        {
+                            "value": 1278700.0409954276
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 8306.581
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 784.0626020769998
+                        },
+                        {
+                            "value": 1278700.0409954276
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 8306.581
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 784.0626020769998
+                        },
+                        {
+                            "value": 1278700.0409954276
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 8306.581
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 784.0626020769998
+                        },
+                        {
+                            "value": 1278700.0409954276
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 8306.581
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000003",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 784.0626020769998
+                        },
+                        {
+                            "value": 1278700.0409954276
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 8306.581
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 784.0626020769998
+                        },
+                        {
+                            "value": 1278700.0409954276
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 8306.581
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000004",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 784.0626020769998
+                        },
+                        {
+                            "value": 1278700.0409954276
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 8306.581
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 784.0626020769998
+                        },
+                        {
+                            "value": 1278700.0409954276
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 8306.581
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000005",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 784.0626020769998
+                        },
+                        {
+                            "value": 1278700.0409954276
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 8306.581
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000006",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 784.0626020769998
+                        },
+                        {
+                            "value": 1278700.0409954276
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 8306.581
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000007",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 784.0626020769998
+                        },
+                        {
+                            "value": 1278700.0409954276
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 8306.581
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 784.0626020769998
+                        },
+                        {
+                            "value": 1278700.0409954276
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 8306.581
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000008",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 784.0626020769998
+                        },
+                        {
+                            "value": 1278700.0409954276
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 8306.581
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 784.0626020769998
+                        },
+                        {
+                            "value": 1278700.0409954276
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 8306.581
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 784.0626020769998
+                        },
+                        {
+                            "value": 1278700.0409954276
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 8306.581
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000003",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 784.0626020769998
+                        },
+                        {
+                            "value": 1278700.0409954276
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 8306.581
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000004",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 784.0626020769998
+                        },
+                        {
+                            "value": 1278700.0409954276
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 8306.581
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 784.0626020769998
+                        },
+                        {
+                            "value": 1278700.0409954276
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 8306.581
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Applicant-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 784.0626020769998
+                        },
+                        {
+                            "value": 1278700.0409954276
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 8306.581
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "task_id": "node_e52e5280-9b60-4103-bb77-adcce40b3efd",
+            "resources": [
+                {
+                    "resource_id": "Clerk-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 127.63344979475985
+                        },
+                        {
+                            "value": 20708.785552212976
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 480.0000010000076
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 127.63344979475985
+                        },
+                        {
+                            "value": 20708.785552212976
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 480.0000010000076
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 127.63344979475985
+                        },
+                        {
+                            "value": 20708.785552212976
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 480.0000010000076
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 127.63344979475985
+                        },
+                        {
+                            "value": 20708.785552212976
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 480.0000010000076
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000003",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 127.63344979475985
+                        },
+                        {
+                            "value": 20708.785552212976
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 480.0000010000076
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 127.63344979475985
+                        },
+                        {
+                            "value": 20708.785552212976
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 480.0000010000076
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000004",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 127.63344979475985
+                        },
+                        {
+                            "value": 20708.785552212976
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 480.0000010000076
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 127.63344979475985
+                        },
+                        {
+                            "value": 20708.785552212976
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 480.0000010000076
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000005",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 127.63344979475985
+                        },
+                        {
+                            "value": 20708.785552212976
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 480.0000010000076
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000006",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 127.63344979475985
+                        },
+                        {
+                            "value": 20708.785552212976
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 480.0000010000076
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000007",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 127.63344979475985
+                        },
+                        {
+                            "value": 20708.785552212976
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 480.0000010000076
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 127.63344979475985
+                        },
+                        {
+                            "value": 20708.785552212976
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 480.0000010000076
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000008",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 127.63344979475985
+                        },
+                        {
+                            "value": 20708.785552212976
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 480.0000010000076
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 127.63344979475985
+                        },
+                        {
+                            "value": 20708.785552212976
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 480.0000010000076
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 127.63344979475985
+                        },
+                        {
+                            "value": 20708.785552212976
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 480.0000010000076
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000003",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 127.63344979475985
+                        },
+                        {
+                            "value": 20708.785552212976
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 480.0000010000076
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000004",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 127.63344979475985
+                        },
+                        {
+                            "value": 20708.785552212976
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 480.0000010000076
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 127.63344979475985
+                        },
+                        {
+                            "value": 20708.785552212976
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 480.0000010000076
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Applicant-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 127.63344979475985
+                        },
+                        {
+                            "value": 20708.785552212976
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 480.0000010000076
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "task_id": "node_214fd5a4-4b93-4516-a3ec-1a4f2ad8a39d",
+            "resources": [
+                {
+                    "resource_id": "Clerk-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 502.30589730308225
+                        },
+                        {
+                            "value": 264664.42295609915
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 502.30589730308225
+                        },
+                        {
+                            "value": 264664.42295609915
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 502.30589730308225
+                        },
+                        {
+                            "value": 264664.42295609915
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 502.30589730308225
+                        },
+                        {
+                            "value": 264664.42295609915
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000003",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 502.30589730308225
+                        },
+                        {
+                            "value": 264664.42295609915
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 502.30589730308225
+                        },
+                        {
+                            "value": 264664.42295609915
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000004",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 502.30589730308225
+                        },
+                        {
+                            "value": 264664.42295609915
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 502.30589730308225
+                        },
+                        {
+                            "value": 264664.42295609915
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000005",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 502.30589730308225
+                        },
+                        {
+                            "value": 264664.42295609915
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000006",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 502.30589730308225
+                        },
+                        {
+                            "value": 264664.42295609915
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000007",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 502.30589730308225
+                        },
+                        {
+                            "value": 264664.42295609915
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 502.30589730308225
+                        },
+                        {
+                            "value": 264664.42295609915
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000008",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 502.30589730308225
+                        },
+                        {
+                            "value": 264664.42295609915
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 502.30589730308225
+                        },
+                        {
+                            "value": 264664.42295609915
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 502.30589730308225
+                        },
+                        {
+                            "value": 264664.42295609915
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000003",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 502.30589730308225
+                        },
+                        {
+                            "value": 264664.42295609915
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000004",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 502.30589730308225
+                        },
+                        {
+                            "value": 264664.42295609915
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 502.30589730308225
+                        },
+                        {
+                            "value": 264664.42295609915
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Applicant-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 502.30589730308225
+                        },
+                        {
+                            "value": 264664.42295609915
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "task_id": "node_b0512281-8487-4120-bebf-e2ba919883d6",
+            "resources": [
+                {
+                    "resource_id": "Clerk-000001",
+                    "distribution_name": "uniform",
+                    "distribution_params": [
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000002",
+                    "distribution_name": "uniform",
+                    "distribution_params": [
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000001",
+                    "distribution_name": "uniform",
+                    "distribution_params": [
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000001",
+                    "distribution_name": "uniform",
+                    "distribution_params": [
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000003",
+                    "distribution_name": "uniform",
+                    "distribution_params": [
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000002",
+                    "distribution_name": "uniform",
+                    "distribution_params": [
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000004",
+                    "distribution_name": "uniform",
+                    "distribution_params": [
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000002",
+                    "distribution_name": "uniform",
+                    "distribution_params": [
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000005",
+                    "distribution_name": "uniform",
+                    "distribution_params": [
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000006",
+                    "distribution_name": "uniform",
+                    "distribution_params": [
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000007",
+                    "distribution_name": "uniform",
+                    "distribution_params": [
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000001",
+                    "distribution_name": "uniform",
+                    "distribution_params": [
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000008",
+                    "distribution_name": "uniform",
+                    "distribution_params": [
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000002",
+                    "distribution_name": "uniform",
+                    "distribution_params": [
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000001",
+                    "distribution_name": "uniform",
+                    "distribution_params": [
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000003",
+                    "distribution_name": "uniform",
+                    "distribution_params": [
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000004",
+                    "distribution_name": "uniform",
+                    "distribution_params": [
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000002",
+                    "distribution_name": "uniform",
+                    "distribution_params": [
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Applicant-000001",
+                    "distribution_name": "uniform",
+                    "distribution_params": [
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 1200.0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "task_id": "node_aef459f6-a161-4a6b-8f99-28661e17ccd5",
+            "resources": [
+                {
+                    "resource_id": "Clerk-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 133.80450987605627
+                        },
+                        {
+                            "value": 21009.348243534696
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 468.9700010000015
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 133.80450987605627
+                        },
+                        {
+                            "value": 21009.348243534696
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 468.9700010000015
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 133.80450987605627
+                        },
+                        {
+                            "value": 21009.348243534696
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 468.9700010000015
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 133.80450987605627
+                        },
+                        {
+                            "value": 21009.348243534696
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 468.9700010000015
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000003",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 133.80450987605627
+                        },
+                        {
+                            "value": 21009.348243534696
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 468.9700010000015
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 133.80450987605627
+                        },
+                        {
+                            "value": 21009.348243534696
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 468.9700010000015
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000004",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 133.80450987605627
+                        },
+                        {
+                            "value": 21009.348243534696
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 468.9700010000015
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 133.80450987605627
+                        },
+                        {
+                            "value": 21009.348243534696
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 468.9700010000015
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000005",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 133.80450987605627
+                        },
+                        {
+                            "value": 21009.348243534696
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 468.9700010000015
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000006",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 133.80450987605627
+                        },
+                        {
+                            "value": 21009.348243534696
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 468.9700010000015
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000007",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 133.80450987605627
+                        },
+                        {
+                            "value": 21009.348243534696
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 468.9700010000015
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 133.80450987605627
+                        },
+                        {
+                            "value": 21009.348243534696
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 468.9700010000015
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000008",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 133.80450987605627
+                        },
+                        {
+                            "value": 21009.348243534696
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 468.9700010000015
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 133.80450987605627
+                        },
+                        {
+                            "value": 21009.348243534696
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 468.9700010000015
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 133.80450987605627
+                        },
+                        {
+                            "value": 21009.348243534696
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 468.9700010000015
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000003",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 133.80450987605627
+                        },
+                        {
+                            "value": 21009.348243534696
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 468.9700010000015
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000004",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 133.80450987605627
+                        },
+                        {
+                            "value": 21009.348243534696
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 468.9700010000015
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 133.80450987605627
+                        },
+                        {
+                            "value": 21009.348243534696
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 468.9700010000015
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Applicant-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 133.80450987605627
+                        },
+                        {
+                            "value": 21009.348243534696
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 468.9700010000015
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "task_id": "node_cf238e42-7e6c-41cc-91fa-e2c89ca79753",
+            "resources": [
+                {
+                    "resource_id": "Clerk-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 481.49360299819443
+                        },
+                        {
+                            "value": 652277.7791238009
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7315.068
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 481.49360299819443
+                        },
+                        {
+                            "value": 652277.7791238009
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7315.068
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 481.49360299819443
+                        },
+                        {
+                            "value": 652277.7791238009
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7315.068
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 481.49360299819443
+                        },
+                        {
+                            "value": 652277.7791238009
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7315.068
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000003",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 481.49360299819443
+                        },
+                        {
+                            "value": 652277.7791238009
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7315.068
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 481.49360299819443
+                        },
+                        {
+                            "value": 652277.7791238009
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7315.068
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000004",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 481.49360299819443
+                        },
+                        {
+                            "value": 652277.7791238009
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7315.068
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 481.49360299819443
+                        },
+                        {
+                            "value": 652277.7791238009
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7315.068
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000005",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 481.49360299819443
+                        },
+                        {
+                            "value": 652277.7791238009
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7315.068
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000006",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 481.49360299819443
+                        },
+                        {
+                            "value": 652277.7791238009
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7315.068
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000007",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 481.49360299819443
+                        },
+                        {
+                            "value": 652277.7791238009
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7315.068
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 481.49360299819443
+                        },
+                        {
+                            "value": 652277.7791238009
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7315.068
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000008",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 481.49360299819443
+                        },
+                        {
+                            "value": 652277.7791238009
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7315.068
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 481.49360299819443
+                        },
+                        {
+                            "value": 652277.7791238009
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7315.068
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 481.49360299819443
+                        },
+                        {
+                            "value": 652277.7791238009
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7315.068
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000003",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 481.49360299819443
+                        },
+                        {
+                            "value": 652277.7791238009
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7315.068
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000004",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 481.49360299819443
+                        },
+                        {
+                            "value": 652277.7791238009
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7315.068
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 481.49360299819443
+                        },
+                        {
+                            "value": 652277.7791238009
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7315.068
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Applicant-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 481.49360299819443
+                        },
+                        {
+                            "value": 652277.7791238009
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7315.068
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "task_id": "node_fd529d82-d0ce-49a8-829f-8651c7ffc323",
+            "resources": [
+                {
+                    "resource_id": "Clerk-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 791.2829650899997
+                        },
+                        {
+                            "value": 1395228.891970105
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7540.531999999999
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 791.2829650899997
+                        },
+                        {
+                            "value": 1395228.891970105
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7540.531999999999
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 791.2829650899997
+                        },
+                        {
+                            "value": 1395228.891970105
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7540.531999999999
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 791.2829650899997
+                        },
+                        {
+                            "value": 1395228.891970105
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7540.531999999999
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000003",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 791.2829650899997
+                        },
+                        {
+                            "value": 1395228.891970105
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7540.531999999999
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 791.2829650899997
+                        },
+                        {
+                            "value": 1395228.891970105
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7540.531999999999
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000004",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 791.2829650899997
+                        },
+                        {
+                            "value": 1395228.891970105
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7540.531999999999
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 791.2829650899997
+                        },
+                        {
+                            "value": 1395228.891970105
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7540.531999999999
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000005",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 791.2829650899997
+                        },
+                        {
+                            "value": 1395228.891970105
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7540.531999999999
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000006",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 791.2829650899997
+                        },
+                        {
+                            "value": 1395228.891970105
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7540.531999999999
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000007",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 791.2829650899997
+                        },
+                        {
+                            "value": 1395228.891970105
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7540.531999999999
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 791.2829650899997
+                        },
+                        {
+                            "value": 1395228.891970105
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7540.531999999999
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000008",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 791.2829650899997
+                        },
+                        {
+                            "value": 1395228.891970105
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7540.531999999999
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 791.2829650899997
+                        },
+                        {
+                            "value": 1395228.891970105
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7540.531999999999
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 791.2829650899997
+                        },
+                        {
+                            "value": 1395228.891970105
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7540.531999999999
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000003",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 791.2829650899997
+                        },
+                        {
+                            "value": 1395228.891970105
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7540.531999999999
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000004",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 791.2829650899997
+                        },
+                        {
+                            "value": 1395228.891970105
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7540.531999999999
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 791.2829650899997
+                        },
+                        {
+                            "value": 1395228.891970105
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7540.531999999999
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Applicant-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 791.2829650899997
+                        },
+                        {
+                            "value": 1395228.891970105
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 7540.531999999999
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "task_id": "node_8c5b4e64-5a5e-46f5-924b-ec42098a2e8b",
+            "resources": [
+                {
+                    "resource_id": "Clerk-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 260.7792243407533
+                        },
+                        {
+                            "value": 161964.81594352383
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 2666.684
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 260.7792243407533
+                        },
+                        {
+                            "value": 161964.81594352383
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 2666.684
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 260.7792243407533
+                        },
+                        {
+                            "value": 161964.81594352383
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 2666.684
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 260.7792243407533
+                        },
+                        {
+                            "value": 161964.81594352383
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 2666.684
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000003",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 260.7792243407533
+                        },
+                        {
+                            "value": 161964.81594352383
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 2666.684
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 260.7792243407533
+                        },
+                        {
+                            "value": 161964.81594352383
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 2666.684
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000004",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 260.7792243407533
+                        },
+                        {
+                            "value": 161964.81594352383
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 2666.684
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 260.7792243407533
+                        },
+                        {
+                            "value": 161964.81594352383
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 2666.684
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000005",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 260.7792243407533
+                        },
+                        {
+                            "value": 161964.81594352383
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 2666.684
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000006",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 260.7792243407533
+                        },
+                        {
+                            "value": 161964.81594352383
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 2666.684
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000007",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 260.7792243407533
+                        },
+                        {
+                            "value": 161964.81594352383
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 2666.684
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 260.7792243407533
+                        },
+                        {
+                            "value": 161964.81594352383
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 2666.684
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000008",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 260.7792243407533
+                        },
+                        {
+                            "value": 161964.81594352383
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 2666.684
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 260.7792243407533
+                        },
+                        {
+                            "value": 161964.81594352383
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 2666.684
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 260.7792243407533
+                        },
+                        {
+                            "value": 161964.81594352383
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 2666.684
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000003",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 260.7792243407533
+                        },
+                        {
+                            "value": 161964.81594352383
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 2666.684
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000004",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 260.7792243407533
+                        },
+                        {
+                            "value": 161964.81594352383
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 2666.684
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 260.7792243407533
+                        },
+                        {
+                            "value": 161964.81594352383
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 2666.684
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Applicant-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 260.7792243407533
+                        },
+                        {
+                            "value": 161964.81594352383
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 2666.684
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "task_id": "node_e5b22641-936f-4550-b0e1-2a7f5bac2231",
+            "resources": [
+                {
+                    "resource_id": "Clerk-000001",
+                    "distribution_name": "norm",
+                    "distribution_params": [
+                        {
+                            "value": 269.8818509879807
+                        },
+                        {
+                            "value": 277.14414612917545
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000002",
+                    "distribution_name": "norm",
+                    "distribution_params": [
+                        {
+                            "value": 269.8818509879807
+                        },
+                        {
+                            "value": 277.14414612917545
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000001",
+                    "distribution_name": "norm",
+                    "distribution_params": [
+                        {
+                            "value": 269.8818509879807
+                        },
+                        {
+                            "value": 277.14414612917545
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000001",
+                    "distribution_name": "norm",
+                    "distribution_params": [
+                        {
+                            "value": 269.8818509879807
+                        },
+                        {
+                            "value": 277.14414612917545
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000003",
+                    "distribution_name": "norm",
+                    "distribution_params": [
+                        {
+                            "value": 269.8818509879807
+                        },
+                        {
+                            "value": 277.14414612917545
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000002",
+                    "distribution_name": "norm",
+                    "distribution_params": [
+                        {
+                            "value": 269.8818509879807
+                        },
+                        {
+                            "value": 277.14414612917545
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000004",
+                    "distribution_name": "norm",
+                    "distribution_params": [
+                        {
+                            "value": 269.8818509879807
+                        },
+                        {
+                            "value": 277.14414612917545
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000002",
+                    "distribution_name": "norm",
+                    "distribution_params": [
+                        {
+                            "value": 269.8818509879807
+                        },
+                        {
+                            "value": 277.14414612917545
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000005",
+                    "distribution_name": "norm",
+                    "distribution_params": [
+                        {
+                            "value": 269.8818509879807
+                        },
+                        {
+                            "value": 277.14414612917545
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000006",
+                    "distribution_name": "norm",
+                    "distribution_params": [
+                        {
+                            "value": 269.8818509879807
+                        },
+                        {
+                            "value": 277.14414612917545
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000007",
+                    "distribution_name": "norm",
+                    "distribution_params": [
+                        {
+                            "value": 269.8818509879807
+                        },
+                        {
+                            "value": 277.14414612917545
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000001",
+                    "distribution_name": "norm",
+                    "distribution_params": [
+                        {
+                            "value": 269.8818509879807
+                        },
+                        {
+                            "value": 277.14414612917545
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000008",
+                    "distribution_name": "norm",
+                    "distribution_params": [
+                        {
+                            "value": 269.8818509879807
+                        },
+                        {
+                            "value": 277.14414612917545
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000002",
+                    "distribution_name": "norm",
+                    "distribution_params": [
+                        {
+                            "value": 269.8818509879807
+                        },
+                        {
+                            "value": 277.14414612917545
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000001",
+                    "distribution_name": "norm",
+                    "distribution_params": [
+                        {
+                            "value": 269.8818509879807
+                        },
+                        {
+                            "value": 277.14414612917545
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000003",
+                    "distribution_name": "norm",
+                    "distribution_params": [
+                        {
+                            "value": 269.8818509879807
+                        },
+                        {
+                            "value": 277.14414612917545
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000004",
+                    "distribution_name": "norm",
+                    "distribution_params": [
+                        {
+                            "value": 269.8818509879807
+                        },
+                        {
+                            "value": 277.14414612917545
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000002",
+                    "distribution_name": "norm",
+                    "distribution_params": [
+                        {
+                            "value": 269.8818509879807
+                        },
+                        {
+                            "value": 277.14414612917545
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 600.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Applicant-000001",
+                    "distribution_name": "norm",
+                    "distribution_params": [
+                        {
+                            "value": 269.8818509879807
+                        },
+                        {
+                            "value": 277.14414612917545
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 600.0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "task_id": "node_4b4e5758-bced-4b98-bad8-57cc2f660e41",
+            "resources": [
+                {
+                    "resource_id": "Clerk-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 109.45372222222221
+                        },
+                        {
+                            "value": 19962.445883126547
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 300.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 109.45372222222221
+                        },
+                        {
+                            "value": 19962.445883126547
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 300.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 109.45372222222221
+                        },
+                        {
+                            "value": 19962.445883126547
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 300.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 109.45372222222221
+                        },
+                        {
+                            "value": 19962.445883126547
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 300.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000003",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 109.45372222222221
+                        },
+                        {
+                            "value": 19962.445883126547
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 300.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Appraiser-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 109.45372222222221
+                        },
+                        {
+                            "value": 19962.445883126547
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 300.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000004",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 109.45372222222221
+                        },
+                        {
+                            "value": 19962.445883126547
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 300.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "AML Investigator-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 109.45372222222221
+                        },
+                        {
+                            "value": 19962.445883126547
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 300.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000005",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 109.45372222222221
+                        },
+                        {
+                            "value": 19962.445883126547
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 300.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000006",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 109.45372222222221
+                        },
+                        {
+                            "value": 19962.445883126547
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 300.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000007",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 109.45372222222221
+                        },
+                        {
+                            "value": 19962.445883126547
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 300.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 109.45372222222221
+                        },
+                        {
+                            "value": 19962.445883126547
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 300.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Clerk-000008",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 109.45372222222221
+                        },
+                        {
+                            "value": 19962.445883126547
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 300.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 109.45372222222221
+                        },
+                        {
+                            "value": 19962.445883126547
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 300.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 109.45372222222221
+                        },
+                        {
+                            "value": 19962.445883126547
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 300.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000003",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 109.45372222222221
+                        },
+                        {
+                            "value": 19962.445883126547
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 300.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Loan Officer-000004",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 109.45372222222221
+                        },
+                        {
+                            "value": 19962.445883126547
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 300.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Senior Officer-000002",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 109.45372222222221
+                        },
+                        {
+                            "value": 19962.445883126547
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 300.0
+                        }
+                    ]
+                },
+                {
+                    "resource_id": "Applicant-000001",
+                    "distribution_name": "gamma",
+                    "distribution_params": [
+                        {
+                            "value": 109.45372222222221
+                        },
+                        {
+                            "value": 19962.445883126547
+                        },
+                        {
+                            "value": 0.0
+                        },
+                        {
+                            "value": 300.0
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "event_distribution": [],
+    "model_type": "CRISP",
+    "granule_size": {
+        "value": 32,
+        "time_unit": "MINUTES"
+    }
+}

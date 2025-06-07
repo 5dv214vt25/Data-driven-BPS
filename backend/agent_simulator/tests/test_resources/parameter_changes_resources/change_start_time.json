@@ -1,0 +1,29 @@
+		{
+    "params": {
+        "num_simulations": 1,
+        "new_num_cases_to_simulate": 250,
+		"start_timestamp": "2026-01-01 08:00:00+00:00",
+
+        "agent_count_changes": [
+            { "id": 0, "count": 1 },
+            { "id": 1, "count": 1 },
+            { "id": 2, "count": 1 }, 
+            { "id": 3, "count": 0 },
+            { "id": 4, "count": 1 },
+            { "id": 5, "count": 1 }, 
+            { "id": 6, "count": 1 },
+            { "id": 7, "count": 1 },
+            { "id": 8, "count": 1 }, 
+            { "id": 9, "count": 1 },
+            { "id": 10, "count": 1 },
+            { "id": 11, "count": 1 },
+            { "id": 12, "count": 1 }, 
+            { "id": 13, "count": 1 },
+            { "id": 14, "count": 1 },
+            { "id": 15, "count": 1 }, 
+            { "id": 16, "count": 1 },
+            { "id": 17, "count": 1 },
+            { "id": 18, "count": 1 }
+        ]
+  }
+}
