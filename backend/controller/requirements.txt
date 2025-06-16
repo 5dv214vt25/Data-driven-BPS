@@ -1,0 +1,19 @@
+flask==3.0.2
+werkzeug==3.0.3
+pytest==7.4.3
+requests==2.29.0
+isort
+black
+flake8
+pep8-naming
+pandas==2.2.3
+psycopg2-binary
+db
+python-dotenv
+flask_swagger_ui
+flask_cors
+pytest-mock
+pm4py
+
+# Force setuptools to use atleast 70.0.0 since erlier versions have vulnerabilities.
+setuptools>=70.0.0
