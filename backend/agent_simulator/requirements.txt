@@ -1,0 +1,25 @@
+log_distance_measures==2.0.0
+lxml==5.3.0
+mesa==2.1.2
+networkx==3.2.1
+numpy==1.26.4
+pandas==2.2.3
+pm4py==2.7.11.13
+polars==0.20.16
+pytz==2024.1
+scipy==1.13.1
+pyarrow==17.0.0
+pyvis
+matplotlib==3.9.2
+Mesa==2.1.2
+deepdiff
+
+# General for API, linting and formatting
+flask==3.0.2
+werkzeug==3.0.3
+pytest==7.4.3
+requests==2.29.0
+isort
+black
+flake8
+pep8-naming
