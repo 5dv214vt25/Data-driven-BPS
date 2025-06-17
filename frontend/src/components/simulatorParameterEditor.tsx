@@ -236,7 +236,7 @@ const SimulatorParameterEditor = forwardRef<SimulatorParameterEditorHandle, Prop
       const numberOfCases = numCases;
       /*NEEDS TO BE CORRECT FORMAT (yyyy-MM-dd HH:mm:ss+HH+mm)*/
       var startTime = agentSimStartTime.replace("T", " ").replace(",", "");
-      if(!startTime.includes("+")) {
+      if (!startTime.includes("+")) {
         startTime = startTime + "+00:00"
       }
 
@@ -267,16 +267,16 @@ const SimulatorParameterEditor = forwardRef<SimulatorParameterEditorHandle, Prop
           cleanScenario = cleanScenario.split(" (")[0].trim();
         }
         const response = await updateAgentParameters(
-          userId, 
-          scenarioId, 
-          jsonFile, 
+          userId,
+          scenarioId,
+          jsonFile,
           cleanScenario + " ( " + currentDate.toLocaleString("en-GB") + " ) "
         )
 
         if (!response) {
           throw new Error(`Server returned bad response`);
         } else {
-          console.log("New scenarioID: " + response.scenarioId) 
+          console.log("New scenarioID: " + response.scenarioId)
         }
 
       } catch (error) {
@@ -353,6 +353,13 @@ const SimulatorParameterEditor = forwardRef<SimulatorParameterEditorHandle, Prop
       })();
     }, [scenario, reloadKey]);
 
+    useEffect(() => {
+      if (scenario && scenario.scenarioType === 'Agent') {
+        setFormStates({});
+        setLabel('');
+      }
+    }, [scenario]);
+
     // Check if we got a scenario
     if (!scenario) {
       return <p>No scenario selected.</p>;
@@ -368,9 +375,9 @@ const SimulatorParameterEditor = forwardRef<SimulatorParameterEditorHandle, Prop
         >
           <Tab text="Diagram" data-key="bpmn" />
           <Tab text="Details" data-key="details" />
-          <Tab text="Events" data-key="events" disabled={!jsonDataSimod.task_resource_distribution 
+          <Tab text="Events" data-key="events" disabled={!jsonDataSimod.task_resource_distribution
             || jsonDataSimod.task_resource_distribution.length === 0} />
-          <Tab text="Resources" data-key="resources" disabled={!jsonDataSimod.resource_profiles 
+          <Tab text="Resources" data-key="resources" disabled={!jsonDataSimod.resource_profiles
             || jsonDataSimod.resource_profiles.length === 0} />
           {scenario.scenarioType === 'Simod' && (<Tab text="Probabilities" data-key="probabilities" />)}
         </TabContainer>
@@ -411,44 +418,46 @@ const SimulatorParameterEditor = forwardRef<SimulatorParameterEditorHandle, Prop
           )}
           {
             selectedTab === 'events' &&
-          <EventsTab
-            bpmnXml={bpmnFileContent}
-            onParaChange={isParaChange}
-            jsonData={jsonDataSimod}
-            setJsonData={setJsonDataSimod}
-          />
+            <EventsTab
+              bpmnXml={bpmnFileContent}
+              onParaChange={isParaChange}
+              jsonData={jsonDataSimod}
+              setJsonData={setJsonDataSimod}
+            />
           }
           {
             selectedTab === 'resources' &&
-          <ResourcesTab bpmnXml={bpmnFileContent}
-            onParaChange={isParaChange}
-            jsonData={jsonDataSimod}
-            setJsonData={setJsonDataSimod}
-          />
+            <ResourcesTab bpmnXml={bpmnFileContent}
+              onParaChange={isParaChange}
+              jsonData={jsonDataSimod}
+              setJsonData={setJsonDataSimod}
+            />
           }
           {
             selectedTab === 'probabilities' && scenario.scenarioType === 'Simod' &&
-          <ProbabilitiesTab
-            bpmnXml={bpmnFileContent}
-            onParaChange={isParaChange}
-            jsonData={jsonDataSimod}
-            setJsonData={setJsonDataSimod}
-          />
+            <ProbabilitiesTab
+              bpmnXml={bpmnFileContent}
+              onParaChange={isParaChange}
+              jsonData={jsonDataSimod}
+              setJsonData={setJsonDataSimod}
+            />
           }
           {selectedTab === 'details' && scenario.scenarioType === 'Simod' && <GeneralSimulationParamtersEditor />}
           {selectedTab === 'details' && scenario.scenarioType === 'Agent' && (
-            <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', 
-              padding: '20px', width: '20%', gap: '10px' }}>
+            <div style={{
+              marginTop: '20px', display: 'flex', flexDirection: 'column',
+              padding: '20px', width: '20%', gap: '10px'
+            }}>
               <Label>Number of simulations:</Label>
-              <Input 
+              <Input
                 value={numSimulations !== null ? String(numSimulations) : '1'}
-                style={{width: '100%'}}
+                style={{ width: '100%' }}
                 onChange={(e) => setNumSimulations(Number(e.target.value))}>
               </Input>
               <Label>Number of cases to simulate:</Label>
-              <Input 
+              <Input
                 value={numCases !== null ? String(numCases) : ''}
-                style={{width: '100%'}}
+                style={{ width: '100%' }}
                 onChange={(e) => setNumCases(e.target.value)}>
               </Input>
               <Label>Start time (yyyy-MM-dd HH:mm:ss+hh:mm):</Label>

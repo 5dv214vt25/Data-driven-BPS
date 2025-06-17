@@ -35,11 +35,11 @@ export function useFormComponentLogic({
   const localState = useRef<State>({});
 
   useEffect(() => {
-    if (formState) {
-      localState.current = formState;
-      originalStateRef.current = formState;
+    if (!formState || Object.keys(formState).length === 0) {
+      fetchInitialState(mode, label, data, localState, setFormState, originalStateRef);
     }
-  }, [formState]);
+    modeRef.current = mode;
+  }, [label, mode, data, formState]);
 
   useEffect(() => {
     if (!readonly && formState) {
