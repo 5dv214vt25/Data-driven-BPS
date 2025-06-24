@@ -71,12 +71,21 @@ These values change how long Nginx will wait for responses.
 
 ### [compose.yaml](https://github.com/algotgraner/pvt-test/blob/main/compose.yaml)
 
-`command: gunicorn -w 2 --timeout=3600 -b 0.0.0.0:8888 api:app`
-The amount of concurrent gunicord workers is set with the `-w` flag and `--timeout` flag sets the lifetime (seconds) of those workers.
+`command: gunicorn -w 2 --timeout=3600 -b 0.0.0.0:8888 api:app`  
+The amount of concurrent [gunicorn](https://gunicorn.org/) workers is set with the `-w` flag and `--timeout` flag sets the lifetime (seconds) of those workers.
 
 ## Event log samples
 
-In the zip file `event_log_samples.zip` there are three files that work with both Simod and AgentSimulator that you can use to try out the project. Please mind that `BPIC17.xes` (one of the event logs in the zip file) can can take a prolonged time to do the discovery on depending on your PC specifications. During testing it has taken as long as 50 minutes for Simod to run its discovery on that event log with AgentSimulator being a bit quicker.
+In the zip file `event_log_samples.zip` there are four files that work with both Simod and AgentSimulator that you can use to try out the project.
+
+|File name|Number of cases|
+|---------|---------------|
+|synthetic_log_motivating_example.csv|1000|
+|LoanApp.csv|1000|
+|BPIC12.xes|8616|
+|BPIC17.xes|30276|
+
+Please mind that `BPIC17.xes` can can take a prolonged time to do the discovery on depending on your PC specifications. During testing it has taken as long as 50 minutes for Simod to run its discovery on that event log with AgentSimulator being a bit quicker.
 
 ## Deploying to Production
 
